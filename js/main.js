@@ -14,6 +14,7 @@
         messagingSenderId: "260657155203"
     };
     firebase.initializeApp(config);
+    let database = firebase.database();
 
     /**
      * Google Firebase Auth
@@ -84,6 +85,14 @@
     }
 
     /*Number of users*/
-
+    //Ajout d'un visiteur dans la base
+    let countVisit = setTimeout(function(){
+        //Save in firebase number of visitors
+        let visitStats = database.ref("totalVisitors");
+        visitStats.once('value').then(function (snapshot) {
+            let nVisitors = snapshot.val();
+            visitStats.set(nVisitors + 1);
+        })
+    },5000);
 
 })(jQuery);

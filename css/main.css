@@ -35,7 +35,7 @@ nav{
     padding-right:100px;
     z-index: 1;
     height: calc(100% - 220px);
-    background: url('../img/background-girl-coffee.jpg');
+    background: url('../assets/img/background-girl-coffee.jpg');
     background-size: cover;
 }
 .date-title{

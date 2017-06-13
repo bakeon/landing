@@ -1,0 +1,154 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+@import "gui";
+
+html,body{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Work Sans', sans-serif;
+  height: 100%;
+  border:0;
+  border-spacing:0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+nav{
+  position: relative;
+  z-index: 9999;
+  background: rgba(238,254,253,0.9);
+  height:120px;
+  width: 100%;
+  -moz-box-shadow: 2px 2px 8px 0px #373737;
+  -webkit-box-shadow: 2px 2px 8px 0px #373737;
+  -o-box-shadow: 2px 2px 8px 0px #373737;
+  box-shadow: 2px 2px 8px 0px #373737;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
+}
+.logo{
+  position: absolute;
+  top:-27px;
+  left:4%;
+  width:300px;
+}
+.main{
+  padding-top:100px;
+  padding-left:100px;
+  padding-right:100px;
+  z-index: 1;
+  height: calc(100% - 220px);
+  background: url('../assets/img/background-girl-coffee.jpg');
+  background-size: cover;
+}
+.date-title{
+  font-weight: bold;
+}
+.mail-content, .headline-content{
+  display: inline-block;
+}
+.mail-content{
+  color:#030733;
+  width:55%;
+}
+.headline-content{
+  z-index: 3;
+  position: relative;
+  text-align: right;
+  width: 44%;
+  color: white;
+  vertical-align: top;
+}
+.mail-text{
+  width: 50%;
+  padding-top:100px;
+}
+.headline-text::after{
+  margin-top:10px;
+  background: white;
+  position: absolute;
+  right:0;
+  display: block;
+  content:"";
+  height: 5px;
+  width: 40px;
+}
+.cta-content{
+  padding-top:25px;
+  width: 50%;
+  text-align: center;
+}
+.cta-content a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin:10px;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 2em;
+  border-radius: 5px;
+}
+#google-connect{
+  background: #DA4835;
+}
+#fb-connect{
+  background: #3B5998;
+}
+#google-connect, #fb-connect{
+  transition: all .3s ease;
+}
+#google-connect:hover, #fb-connect:hover{
+  -moz-box-shadow: 2px 2px 8px 0px #373737;
+  -webkit-box-shadow: 2px 2px 8px 0px #373737;
+  -o-box-shadow: 2px 2px 8px 0px #373737;
+  box-shadow: 2px 2px 8px 0px #373737;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
+}
+#shape-1,#shape-2{
+  position: absolute;
+}
+#shape-1{
+  z-index: 1;
+  transform: skewX(-15deg);
+  top: 0;
+  right: -120px;
+  width:500px;
+  height: 100%;
+  background: #030733;
+}
+#shape-2{
+  z-index: 2;
+  transform: skewX(-18deg);
+  top: 0;
+  right: -180px;
+  width:500px;
+  height: 100%;
+  background: #0f153c;
+}
+/*MEDIA QUERIES*/
+@media only screen and (max-device-width : 1024px)  {
+  .mail-content,.headline-content{
+    display: block;
+    width: 100%;
+  }
+  .mail-content{
+    margin-top:50px
+  }
+  .mail-text, .cta-content{
+    width: 100%;
+  }
+  .headline-content{
+    width: 75%;
+    position: absolute;
+    top:210px;
+  }
+  .headline-text::after{
+    right:0
+  }
+  .main{
+    height: 100%;
+  }
+}

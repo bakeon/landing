@@ -38,11 +38,11 @@
             $('#main').append('<div id="'+templating[i].type+i+'" class="'+templating[i].type+'"></div>');
         }
         for(let i=0 ; i<= templating.length-1 ; i=i+1 ){
-            $.get('views/'+templating[i].type+'.mst',function(template){
-                let view = templating[i];
+            $.get('views/'+context[i].type+'.mst',function(template){
+                let view = context[i];
                 console.log(view);
                 let rendered = Mustache.render(template,view);
-                $('#'+templating[i].type+i+'').html(rendered);
+                $('#'+context[i].type+i+'').html(rendered);
             });
         }
     }

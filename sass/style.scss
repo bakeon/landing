@@ -32,6 +32,11 @@ nav{
   -o-box-shadow: 2px 2px 8px 0px #373737;
   box-shadow: 2px 2px 8px 0px #373737;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
+  @include flex-function(row,flex-end,center);
+  height:120px;
+  ul{
+    @include flex-function(row,flex-end,center);
+  }
 }
 .logo{
   position: absolute;
@@ -52,6 +57,7 @@ nav{
     }
   }
 }
+
 
 @media only screen and (max-device-width : 1024px)  {
   .mail-content,.headline-content{

@@ -43,6 +43,8 @@ function sendWelcomeEmail(email, displayName) {
         to: email
     };
 
+
+
     // The user subscribed to the newsletter.
     mailOptions.subject = `Bienvenue dans ${APP_NAME}!`;
     mailOptions.text = `Hey ${displayName || ''}! Bienvenue sur ${APP_NAME}. J'espère que tu vas kiffer ta mère.`;

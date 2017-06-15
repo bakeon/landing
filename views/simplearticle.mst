@@ -1,0 +1,9 @@
+<h1>{{data.title}}</h1>
+<div id="articleContainer">
+    <article>
+        <img src="{{article.url}}"/>
+        <h3>{{article.title}}</h3>
+        <p class="text-fonctionality">{{article.paragraphe}}</p>
+    </article>
+</div>
+<a href="/dashboard" class="sp-button-pink">lien vers la page</a>

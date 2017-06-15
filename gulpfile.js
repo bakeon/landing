@@ -50,6 +50,11 @@ gulp.task('assets',function () {
         .pipe(gulp.dest('dist/assets'));
 });
 
+gulp.task('views',function () {
+    gulp.src('views/*.mst')
+        .pipe(gulp.dest('dist/views'));
+});
+
 
 // Watch Files For Changes
 gulp.task('watch', function() {
@@ -60,8 +65,10 @@ gulp.task('watch', function() {
     gulp.watch('js/*.js', ['lint']).on('change', browserSync.reload);
     gulp.watch('sass/*.scss', ['sass']).on('change', browserSync.reload);
     gulp.watch('**/index.html',['html']).on('change', browserSync.reload);
+    gulp.watch('views/*.mst',['views']).on('change', browserSync.reload);
+
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'watch', 'html','assets']);
-gulp.task('build', ['lint', 'sass', 'html','assets']);
+gulp.task('default', ['lint', 'sass', 'watch', 'html','assets','views']);
+gulp.task('build', ['lint', 'sass', 'html','assets','views']);

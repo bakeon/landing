@@ -26,12 +26,10 @@
             .signInWithPopup(googleProvider).then(function(result) {
             let token = result.credential.accessToken;
             let user = result.user;
-            //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
             let mail = result.user.email;
-            let from = "Google";
-            writeUserSubscribe(uid, mail, from);
             $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            /*Send email*/
 
 
         }).catch(function(error) {
@@ -52,9 +50,8 @@
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
             let mail = result.user.email;
-            let from = "Facebook    ";
-            writeUserSubscribe(uid, mail, from);
             $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            /*Send mail*/
 
         }).catch(function(error) {
 
@@ -76,13 +73,6 @@
         e.preventDefault();
         googleSignin();
     });
-
-    function writeUserSubscribe(uid,mail,from){
-        firebase.database().ref('subscribers/' + uid).set({
-            mail: mail,
-            from: from
-        });
-    }
 
     /*Number of users*/
     //Ajout d'un visiteur dans la base

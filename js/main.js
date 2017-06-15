@@ -79,7 +79,7 @@
     body.on('click','#playVideo',function () {
        $('#lightboxVideo').removeClass('hide');
     });
-    body.on('click','#closeLightboxVideo',function () {
+    body.on('click','#closeLightboxVideo,.lightbox-container',function () {
         $('#lightboxVideo').addClass('hide');
     });
 

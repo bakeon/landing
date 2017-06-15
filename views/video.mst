@@ -4,7 +4,9 @@
 </div>
 
 <div id="lightboxVideo" class="hide lightbox">
-    <span id="closeLightboxVideo" class="icon rlicon-close"></span>
-    <a class="embedly-card" href="{{url}}"></a>
+    <span id="closeLightboxVideo" class="icon rlicon-close pointer"></span>
+    <div class="layout-column lightbox-container">
+        <a class="embedly-card" href="{{url}}"></a>
+    </div>
     <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 </div>

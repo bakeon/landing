@@ -38,6 +38,12 @@
   cursor:pointer;
 }
 
+#closeLightboxVideo{
+  position: absolute;
+  top:20px;
+  right:20px;
+}
+
 .layout-column{
   @include flex-function(column,space-around,center)
 
@@ -48,9 +54,15 @@
 }
 
 .lightbox{
+  z-index: 100;
   height:100vh;
   width:100vw;
   position: fixed;
   top:0;
   left:0;
+  .lightbox-container{
+    height:100%;
+    width:100%;
+    background: rgba(33,33,33,0.8);
+  }
 }

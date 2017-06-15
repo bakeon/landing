@@ -21,13 +21,11 @@ gulp.task('lint', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
-
-//gulp.task('vendors',function () {
-  //  gulp.src(mainBowerFiles('**/*.js',{includeDev:true}))
-    //    .pipe(concat('vendor.js'))
-      //  .pipe(gulp.dest('dist/'));
-//});
-
+gulp.task('vendors',function () {
+    gulp.src(mainBowerFiles('**/*.js',{includeDev:true}))
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('dist/'));
+});
 
 // Compile Sass file in css file in the dist directory
 gulp.task('sass', function() {
@@ -71,4 +69,4 @@ gulp.task('watch', function() {
 
 // Default Task
 gulp.task('default', ['lint', 'sass', 'watch', 'html','assets','views']);
-gulp.task('build', ['lint', 'sass', 'html','assets','views']);
+gulp.task('build', ['lint', 'sass', 'html','assets','views','vendors']);

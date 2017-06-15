@@ -1,5 +1,7 @@
-<div>
-    <nav>
-        <a href="index.html"><img class="logo" src="assets/img/guidebook.svg"></a>
-    </nav>
-</div>
+<nav>
+    <a href="index.html"><img class="logo" src="assets/img/guidebook.svg"></a>
+    <ul>
+        <li><a href="#" target="_blank">facebook</a></li>
+        <li><a href="#" target="_blank">twitter</a></li>
+    </ul>
+</nav>

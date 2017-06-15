@@ -1,6 +1,6 @@
 @import "reset";
-@import "variables";
 @import "mixin";
+@import "variables";
 @import "gui";
 
 html,body{
@@ -23,7 +23,7 @@ main{
 
 nav{
   position: fixed;
-  z-index: 9999;
+  z-index: 10;
   background: rgba(238,254,253,0.9);
   height:120px;
   width: 100%;
@@ -32,6 +32,11 @@ nav{
   -o-box-shadow: 2px 2px 8px 0px #373737;
   box-shadow: 2px 2px 8px 0px #373737;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
+  @include flex-function(row,flex-end,center);
+  height:120px;
+  ul{
+    @include flex-function(row,flex-end,center);
+  }
 }
 .logo{
   position: absolute;
@@ -46,35 +51,12 @@ nav{
   .section-container{
     height:100%;
     width:100%;
-  }
-}
-.video{
-  .section-container{
     @include flex-function(column,space-around,center);
+    .articleContainer{
+      width:100%;
+    }
   }
 }
-.doubleArticle{
-  .section-container{
-    @include flex-function(row,space-around,center);
-  }
-}
-
-.cta-content{
-  display: block;
-  position: absolute;
-  border: 1px solid red;
-  height:200px;
-  width:200px;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
-.cta-content a{
-  display: inline-block;
-  height:50px;
-  width: 50px;
-}
-
 
 
 @media only screen and (max-device-width : 1024px)  {

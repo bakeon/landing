@@ -74,6 +74,16 @@
         googleSignin();
     });
 
+    let body = $('body');
+
+    body.on('click','#playVideo',function () {
+       $('#lightboxVideo').removeClass('hide');
+    });
+    body.on('click','#closeLightboxVideo,.lightbox-container',function () {
+        $('#lightboxVideo').addClass('hide');
+    });
+
+
     /*Number of users*/
     //Ajout d'un visiteur dans la base
     let countVisit = setTimeout(function(){

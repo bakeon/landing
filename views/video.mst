@@ -1,13 +1,12 @@
 <div class="section-container">
     <h1>{{title}}</h1>
-    <div id="play" class="lr-button-play" data-target="{{url}}">
-        <span class="icon lricon-play">
-
-        </span>
-    </div>
+    <span id="playVideo" class="icon lricon-{{icon}} pointer"></span>
 </div>
 
-<div id="lightboxVideo" class="hide">
-    <a class="embedly-card" href="{{url}}"></a>
+<div id="lightboxVideo" class="hide lightbox">
+    <span id="closeLightboxVideo" class="icon rlicon-close pointer"></span>
+    <div class="layout-column lightbox-container">
+        <a class="embedly-card" href="{{url}}"></a>
+    </div>
     <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 </div>

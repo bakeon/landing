@@ -1,18 +1,5 @@
 <div>
-    <h1 id="brandName">
-        <a href="index.html">
-            <img id="logo" src="images/logo.png" alt="logo"/>
-        </a>
-    </h1>
-    <nav id="navSite" class="header_items">
-        <ul>
-            <li id="liensNav1"><a href="">Works</a></li>
-            <li id="liensNav2"><a href="">About</a></li>
-            <li id="liensNav3"><a href="">Contact</a></li>
-        </ul>
+    <nav>
+        <a href="index.html"><img class="logo" src="assets/img/guidebook.svg"></a>
     </nav>
-    <ul id="navSocial">
-        <li ><a id="twitter" href="#">Twitter</a></li>
-        <li ><a id="facebook" href="#">Facebook</a></li>
-    </ul>
 </div>

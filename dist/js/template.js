@@ -29,13 +29,13 @@
         }
     ];
     function loadTemplate() {
-        console.log(context.length);
+        console.log(templating.length);
         $.get('views/header.mst', function(template) {
             let rendered = Mustache.render(template);
-            $('#header').html(rendered);
+            $('header').html(rendered);
         });
         for(let i=0 ; i<= templating.length-1 ; i=i+1 ){
-            $('#main').append('<div id="'+templating[i].type+i+'" class="'+templating[i].type+'"></div>');
+            $('main').append('<div id="'+templating[i].type+i+'" class="'+templating[i].type+'"></div>');
         }
         for(let i=0 ; i<= templating.length-1 ; i=i+1 ){
             $.get('views/'+context[i].type+'.mst',function(template){
@@ -46,4 +46,5 @@
             });
         }
     }
+    loadTemplate();
 })(jQuery);

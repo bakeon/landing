@@ -30,14 +30,9 @@
     ];
 
 
-    var windowHeight = $(window).height();
-    var sectionHeight = windowHeight - 100;
+    let sectionHeight;
 
-    var resizePage = function () {
-
-    };
-
-    var loadTemplate = function() {
+    let loadTemplate = function() {
         console.log(templating.length);
         $.get('views/header.mst', function(template) {
             let rendered = Mustache.render(template);
@@ -47,13 +42,13 @@
             $('main').append('<div id="'+templating[i].type+i+'" class="'+templating[i].type+' section"></div>');
         }
         for(let i=0 ; i<= templating.length-1 ; i=i+1 ){
-            $.get('views/'+context[i].type+'.mst',function(template){
-                let view = context[i];
+            $.get('views/'+templating[i].type+'.mst',function(template){
+                let view = templating[i];
                 console.log(view);
                 let rendered = Mustache.render(template,view);
-                $('#'+context[i].type+i+'').html(rendered);
+                $('#'+templating[i].type+i+'').html(rendered);
             });
         }
-    }
+    };
     loadTemplate();
 })(jQuery);

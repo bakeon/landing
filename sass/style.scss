@@ -16,8 +16,13 @@ html,body{
   overflow-x: hidden;
 }
 
+main{
+  height:100%;
+  padding-top:120px;
+}
+
 nav{
-  position: relative;
+  position: fixed;
   z-index: 9999;
   background: rgba(238,254,253,0.9);
   height:120px;
@@ -36,7 +41,22 @@ nav{
 }
 
 .section{
-  heigth:0px;
+  display: block;
+  height:calc(100% - 120px);
+  .section-container{
+    height:100%;
+    width:100%;
+  }
+}
+.video{
+  .section-container{
+    @include flex-function(column,space-around,center);
+  }
+}
+.doubleArticle{
+  .section-container{
+    @include flex-function(row,space-around,center);
+  }
 }
 
 

@@ -81,6 +81,7 @@
     });
     body.on('click','#closeLightboxVideo,.lightbox-container',function () {
         $('#lightboxVideo').addClass('hide');
+        $('video')[0].pause();
     });
 
 

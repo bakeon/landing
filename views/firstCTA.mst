@@ -1,0 +1,7 @@
+<div class="content section-container">
+    <div>
+        <h1>{{title}}</h1>
+        <p>{{paragraphe}}</p>
+        <a href="#points" class="lr-CTA">{{action}}</a>
+    </div>
+</div>

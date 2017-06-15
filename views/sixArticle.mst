@@ -1,0 +1,46 @@
+<div class="section-container">
+    <h1>{{titleSection}}</h1>
+    <div class="articleContainer layout-{{direction}}">
+        <div class="layout-row-top">
+            <article class="{{articles.first.direction}}">
+                <span class="icon lricon-{{articles.first.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.first.icon}}.png">
+                <h3>{{articles.first.titre}}</h3>
+                <p class="text-fonctionality">{{articles.first.paragraphe}}</p>
+            </article>
+            <article class="{{articles.second.direction}}">
+                <span class="icon lricon-{{articles.second.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.second.icon}}.png">
+                <h3>{{articles.second.titre}}</h3>
+                <p class="text-fonctionality">{{articles.second.paragraphe}}</p>
+            </article>
+            <article class="{{articles.third.direction}}">
+                <span class="icon lricon-{{articles.third.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.third.icon}}.png">
+                <h3>{{articles.third.titre}}</h3>
+                <p class="text-fonctionality">{{articles.third.paragraphe}}</p>
+            </article>
+        </div>
+        <div class="layout-row-top">
+            <article class="{{articles.fourth.direction}}">
+                <span class="icon lricon-{{articles.fourth.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.fourth.icon}}.png">
+                <h3>{{articles.fourth.titre}}</h3>
+                <p class="text-fonctionality">{{articles.fourth.paragraphe}}</p>
+            </article>
+            <article class="{{articles.fifth.direction}}">
+                <span class="icon lricon-{{articles.fifth.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.fifth.icon}}.png">
+                <h3>{{articles.fifth.titre}}</h3>
+                <p class="text-fonctionality">{{articles.fifth.paragraphe}}</p>
+            </article>
+            <article class="{{articles.sixth.direction}}">
+                <span class="icon lricon-{{articles.sixth.icon}}"></span>
+                <img src="../assets/img/picto/{{articles.sixth.icon}}.png">
+                <h3>{{articles.sixth.titre}}</h3>
+                <p class="text-fonctionality">{{articles.sixth.paragraphe}}</p>
+            </article>
+        </div>
+
+    </div>
+</div>

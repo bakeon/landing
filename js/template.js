@@ -2,25 +2,51 @@
 
     let templating = [
         {
+            type:'firstCTA',
+            title:'Bienvenue dans la RUUCHE',
+            paragraphe:'Connecte toi à ton avenir',
+            action:'Découvrir'
+        },
+        {
             type : 'video',
             url : 'https://www.youtube.com/watch?v=_KztNIg4cvE',
             title:'The video Title',
             icon:'play'
         },
         {
-            type:'doubleArticle',
-            titleSection:'titre de la section',
+            type:'sixArticle',
+            titleSection:'En quelques points...',
             direction:'row',
             articles: {
                 first:{
-                    titre:'un titre',
-                    paragraphe:'un paragraphe',
-                    icon:''
+                    titre:'Le concept',
+                    paragraphe:'La ruuche te permet de prendre contact directement avec un mentor qui te conseillera sur les futurs études que tu compte entreprendre.',
+                    icon:'desktop'
                 },
                 second:{
-                    titre:'un titre2',
-                    paragraphe: 'un paragraphe 2',
-                    icon: ''
+                    titre:'Découvrir ce quil te plait',
+                    paragraphe: 'La Ruuche est le meilleurs moyen de choisir sereinement ses études supérieurs. ',
+                    icon: 'pencil'
+                },
+                third:{
+                    titre:'Même sur ton réseau social préféré',
+                    paragraphe:'Tu seras connecté à ton mentor même sur Snapchat pour être en immersion total dans ta futur école.',
+                    icon:'phone'
+                },
+                fourth:{
+                    titre:'Les résultats',
+                    paragraphe: 'La vie étudiante est bien remplie... La Ruuche se charge de vous simplifier la vie.',
+                    icon: 'cheese'
+                },
+                fifth:{
+                    titre:'laspect ludique',
+                    paragraphe:'Qui a dit que la Ruuche était compliqué ? Un jeu denfant',
+                    icon:'game'
+                },
+                sixth:{
+                    titre:'Les témoignages',
+                    paragraphe: 'Apportez une pierre à l’edifice de La Ruuche. Que du love ! ',
+                    icon: 'heart'
                 }
             }
         },

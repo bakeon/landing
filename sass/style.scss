@@ -1,6 +1,6 @@
 @import "reset";
-@import "variables";
 @import "mixin";
+@import "variables";
 @import "gui";
 
 html,body{
@@ -46,36 +46,12 @@ nav{
   .section-container{
     height:100%;
     width:100%;
-  }
-}
-.video{
-  .section-container{
     @include flex-function(column,space-around,center);
+    .articleContainer{
+      width:100%;
+    }
   }
 }
-.doubleArticle{
-  .section-container{
-    @include flex-function(row,space-around,center);
-  }
-}
-
-.cta-content{
-  display: block;
-  position: absolute;
-  border: 1px solid red;
-  height:200px;
-  width:200px;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
-.cta-content a{
-  display: inline-block;
-  height:50px;
-  width: 50px;
-}
-
-
 
 @media only screen and (max-device-width : 1024px)  {
   .mail-content,.headline-content{

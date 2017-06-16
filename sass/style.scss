@@ -150,6 +150,14 @@ nav{
       }
     }
   }
+  .logo{
+    width:175px;
+  }
+  .section{
+    h1{
+      text-align: center;
+    }
+  }
   .sixArticle.section{
     height:200%;
   }
@@ -160,7 +168,10 @@ nav{
       margin-bottom: 40px;
     }
   }
+
 }
+
+
 
 @media only screen and (max-device-width : 1024px)  {
   .mail-content,.headline-content{
@@ -184,6 +195,9 @@ nav{
   .main{
     height: 100%;
   }
+  .logo{
+    width:175px;
+  }
   .sixArticle .layout-row-top{
     @include flex-function(column,center,center);
   }
@@ -205,5 +219,19 @@ nav{
       width:60%;
       margin-bottom: 40px;
     }
+  }
+}
+
+
+@media screen and (max-width:640px){
+  .sixArticle.section {
+    height: 265%;
+  }
+  .layout-row{
+    flex-direction: column;
+  }
+  .subscribe #fb-connect{
+    margin:0;
+    margin-bottom: 15px;
   }
 }

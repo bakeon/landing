@@ -80,8 +80,12 @@ nav{
 .sixArticle{
   background: url("../assets/img/sigle_logo_gris.svg")no-repeat center center;
   background-size: contain;
+  &.section .section-container>div{
+    height:70%;
+  }
   .layout-row-top{
     width:100%;
+    margin-bottom: 40px;
   }
   .icon{
     margin-bottom: 20px;
@@ -107,7 +111,7 @@ nav{
     }
   }
   article{
-    width:20%;
+    width:23%;
     text-align: center;
     h3{
       text-transform: uppercase;
@@ -136,8 +140,27 @@ nav{
   }
 }
 
-
-
+@media screen and (max-width: 1024px ){
+  .sixArticle .layout-row-top{
+    @include flex-function(column,space-around,center);
+    .section-container{
+      @include flex-function(column,space-around,center);
+      &>div{
+        @include flex-function(column,space-around,center);
+      }
+    }
+  }
+  .sixArticle.section{
+    height:200%;
+  }
+  .sixArticle.section .section-container>div{
+    height:80%;
+    article{
+      width:60%;
+      margin-bottom: 40px;
+    }
+  }
+}
 
 @media only screen and (max-device-width : 1024px)  {
   .mail-content,.headline-content{
@@ -160,5 +183,8 @@ nav{
   }
   .main{
     height: 100%;
+  }
+  .sixArticle .layout-row-top{
+    @include flex-function(column,center,center);
   }
 }

@@ -128,7 +128,7 @@ nav{
 }
 
 .video{
-  background: url("../assets/img/bg_video.svg")no-repeat center center;
+  position: relative;
   background-size: cover;
   .player-action{
     width:100%;
@@ -138,6 +138,27 @@ nav{
   &.section .section-container>div{
     height:80%;
   }
+}
+
+.hive{
+  display: block;
+  content: '';
+  height:100vh;
+  width:50vw;
+  position: absolute;
+  font-size: 0;
+  overflow: hidden;
+  background-size:contain ;
+}
+.hive1{
+  top:0;
+  left:-15vw;
+  background: url("../assets/img/bg_video-01.svg")no-repeat center center;
+}
+.hive2{
+  bottom:-10vh;
+  right:-15vw;
+  background: url("../assets/img/bg_video-02.svg")no-repeat center center;
 }
 
 @media screen and (max-width: 1024px ){
@@ -233,5 +254,14 @@ nav{
   .subscribe #fb-connect{
     margin:0;
     margin-bottom: 15px;
+  }
+  .hive{
+    width:70vw;
+  }
+  .hive1{
+    background: url("../assets/img/bg_video-01.svg")no-repeat top center;
+  }
+  .hive2{
+    background: url("../assets/img/bg_video-02.svg")no-repeat bottom center;
   }
 }

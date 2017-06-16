@@ -1,6 +1,8 @@
 <div class="section-container">
     <!--<span id="playVideo" class="icon lricon-{{icon}} pointer"></span>-->
     <div id="playVideo" class="player-action"></div>
+    <span class="hive1 hive">hive</span>
+    <span class="hive2 hive">hive</span>
 </div>
 
 <div id="lightboxVideo" class="hide lightbox">

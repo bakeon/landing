@@ -187,4 +187,23 @@ nav{
   .sixArticle .layout-row-top{
     @include flex-function(column,center,center);
   }
+  .sixArticle .layout-row-top{
+    @include flex-function(column,space-around,center);
+    .section-container{
+      @include flex-function(column,space-around,center);
+      &>div{
+        @include flex-function(column,space-around,center);
+      }
+    }
+  }
+  .sixArticle.section{
+    height:200%;
+  }
+  .sixArticle.section .section-container>div{
+    height:80%;
+    article{
+      width:60%;
+      margin-bottom: 40px;
+    }
+  }
 }

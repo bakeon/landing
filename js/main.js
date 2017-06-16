@@ -63,13 +63,12 @@
         });
     }
 
-    $('document').on('click', "#fb-connect", function (e) {
-        console.log('ok');
+    $('.content').on('click', "#fb-connect", function (e) {
+
         e.preventDefault();
         fbSignin();
     });
-
-    $('document').on('click', '#google-connect', function (e) {
+    $('.content').on('click', '#google-connect', function (e) {
         e.preventDefault();
         googleSignin();
     });

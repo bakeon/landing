@@ -50,7 +50,7 @@
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
             let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
             /*Send mail*/
 
         }).catch(function(error) {

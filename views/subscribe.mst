@@ -3,8 +3,8 @@
     <h1>Restons en contact</h1>
     <p>Connecte toi à la ruuche !</p>
         <div class="cta-content layout-row">
-            <a href="#" id="fb-connect" class="lr-CTA"><i class="fa fa-facebook icon" aria-hidden="true"></i>facebook connect</a>
-            <a href="#" id="google-connect" class="lr-CTA"><i class="fa fa-google-plus icon" aria-hidden="true"></i>google connect</a>
+            <a href="#" id="fb-connect" class="social-CTA"><img src="assets/img/facebook-connect-bee.png"></a>
+            <a href="#" id="google-connect" class="social-CTA"><img src="assets/img/google-connect-bee.png"></a>
         </div>
     </div>
 </div>

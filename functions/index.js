@@ -52,3 +52,10 @@ function sendWelcomeEmail(email, displayName) {
         console.log('Message envoyé à :', email);
     });
 }
+
+exports.hourly_job =
+    functions.pubsub.topic('daily-tick').onPublish((event) => {
+        curl.request({ url: 'http://google.com', pretend: true }, function (err, stdout, meta) {
+            console.log('%s %s', meta.cmd, meta.args.join(' '));
+        });
+    });

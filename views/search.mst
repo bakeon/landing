@@ -1,0 +1,3 @@
+<div class="section-container">
+    <input id="search" type="search" placeholder="rechercher"/>
+</div>

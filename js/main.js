@@ -16,6 +16,7 @@
     firebase.initializeApp(config);
     let database = firebase.database();
 
+
     /**
      * Google Firebase Auth
      * @type {firebase.auth.GoogleAuthProvider}
@@ -28,7 +29,7 @@
             let user = result.user;
             let uid = result.user.uid;
             let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez La Ruuche. A bientôt pour la sortie officiel du site.</p>');
             /*Send email*/
 
 
@@ -50,7 +51,7 @@
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
             let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez La Ruuche. A bientôt pour la sortie officielle du site.</p>');
             /*Send mail*/
 
         }).catch(function(error) {
@@ -62,6 +63,40 @@
             console.log(error.message)
         });
     }
+    let connectDatabaseApi =function () {
+        $.ajax({
+            type: "POST",
+            url: "https://api.opendata.onisep.fr/api/1.0/login",
+            data: {email:'e.thieffry62930@gmail.com',password:'BakeOn_1'},
+            dataType:'json',
+            success: function(json) {
+                console.log(json);
+            }
+        });
+    };
+
+    let checkTokenDatabase = function () {
+        let dateToken = database.ref("dateAccesToken");
+        dateToken.once('value').then(function (snapshot) {
+            let date = snapshot.val();
+            if(!date ){
+                console.log('!date');
+                connectDatabaseApi();
+                var a=moment().add(1,'day').toJSON();
+                console.log(a);
+                dateToken.set(a);
+            }else{
+                console.log('else');
+                console.log(date);
+                if(moment().isBefore(date)){
+                    console.log('isbefore');
+                }else{
+                    console.log('isafter');
+                    connectDatabaseApi();
+                }
+            }
+        })
+    };
 
     $('.content').on('click', "#fb-connect", function (e) {
 
@@ -83,6 +118,9 @@
         $('video')[0].pause();
     });
 
+    body.on('focus','#search',function () {
+        checkTokenDatabase();
+    });
 
     /*Number of users*/
     //Ajout d'un visiteur dans la base

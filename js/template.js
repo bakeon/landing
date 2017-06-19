@@ -2,6 +2,9 @@
 
     let templating = [
         {
+            type:'search'
+        },
+        {
             type:'firstCTA',
             title:'Bienvenue dans la RUUCHE',
             paragraphe:'Connecte toi à ton avenir',

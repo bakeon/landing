@@ -91,6 +91,14 @@ nav{
   width:50vw;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  .icon{
+    font-size: 30px;
+    position: absolute;
+    top:50%;
+    left:20px;
+    transform:translateY(-50%);
+    z-index: 11;
+  }
   &:before{
     content: '';
     display: block;
@@ -110,12 +118,13 @@ nav{
   &:after{
     content: '';
     display: block;
-    height:10px;
+    height:4px;
     width:0;
-    background: yellow;
+    background: $yellow;
     position: absolute;
-    bottom:-4px;
+    bottom:0px;
     left:0;
+    z-index:10;
     transition:width 0.2s ease;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -127,6 +136,8 @@ nav{
     }
   }
 }
+
+
 input[type=search] {
   width:100%;
   height: 100%;
@@ -147,6 +158,211 @@ input[type=submit] {
   cursor: pointer;
   -webkit-border-radius: 5px;
 }
+
+/*schools*/
+
+.school{
+  padding-top: 200px;
+}
+
+.school-style{
+  h1{
+    font-weight:500;
+  }
+  h2{
+    font-weight:400;
+  }
+}
+
+.left-info{
+  width:33%;
+  height:100%;
+  position: relative;
+  .images-container{
+    @include flex-function(row,center,center);
+    width:100%;
+    flex:1;
+    position: relative;
+    &>div{
+      width:30vw;
+      height:30vw;
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,-70px);
+      &>img{
+        width:80%;
+        height:auto;
+        @include absolute-center();
+      }
+    }
+
+    .logo-school{
+      width:120px;
+      height:120px;
+      border-radius:60px;
+      border:2px solid $blue;
+      background: $white;
+      position: absolute;
+      bottom:20px;
+      left:20px;
+      img{
+        width:80%;
+        height:auto;
+        @include absolute-center();
+      }
+    }
+  }
+
+}
+.right-info{
+  height: 100%;
+  flex:1;
+  padding: 30px 30px 30px 0;
+  position: relative;
+  color: $blue;
+  font-size: 16px;
+  h1{
+    font-size: 34px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  h2{
+    font-size: 20px;
+  }
+  h1,h2{
+    color:$black;
+  }
+  .school-title{
+    margin-bottom: 30px;
+  }
+  .icon{
+    color: $yellow;
+    font-size: 55px;
+  }
+  .liste-3{
+    width:100%;
+    height:130px;
+    margin-bottom:15px;
+    li{
+      position: relative;
+      flex:1;
+      height:100%;
+      .icon{
+        margin-bottom: 15px;
+      }
+      &>div{
+        height:80%;
+      }
+      &:nth-child(2){
+        &:before,&:after{
+          content: '';
+          display: block;
+          height:90%;
+          width:1px;
+          background: $grey;
+          position: absolute;
+          top:50%;
+          transform:translateY(-50%);
+          left:0;
+        }
+        &:after{
+          left:100%;
+        }
+      }
+    }
+    &+div{
+      width:100%;
+      ul{
+        width:100%;
+      }
+    }
+  }
+  .location{
+    border-top: 1px solid $grey;
+    height:100px;
+    position: relative;
+    li{
+      height:100%;
+      width:100%;
+      position: relative;
+      &:last-child{
+        &:after{
+          content: '';
+          display: block;
+          height:65%;
+          width:1px;
+          background: $grey;
+          position: absolute;
+          top:50%;
+          transform:translateY(-50%);
+          left:0;
+        }
+      }
+    }
+    .icon{
+      margin-right: 10px;
+    }
+  }
+  .avis{
+    border-top: 1px solid $grey;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      height:80%;
+      width:1px;
+      background: $grey;
+      position: absolute;
+      top:50%;
+      transform:translateY(-50%);
+      right:50%;
+    }
+  }
+  .positif,.negatif{
+    flex: 1;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+    &>div{
+      margin-bottom: 10px;
+    }
+    li{
+      margin-bottom: 5px;
+    }
+    .icon{
+      font-size: 45px;
+      margin-right: 10px;
+    }
+  }
+  .positif{
+
+  }
+  .duree{
+    height:60px;
+    width:100%;
+    position: relative;
+    background: url("../assets/img/cursus.svg")no-repeat center center;
+    background-size:110% ;
+    margin-bottom: 25px;
+    font-size: 14px;
+    &>div{
+      margin-left: 5px;
+    }
+    .circle{
+      height:60px;
+      width:60px;
+      border-radius:30px;
+      border:2px solid $yellow;
+      font-size: 14px;
+      background: $white;
+      @include absolute-center();
+    }
+  }
+
+}
+
+
 main{
   height:100%;
 }

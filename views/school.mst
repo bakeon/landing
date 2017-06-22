@@ -1,0 +1,62 @@
+<div class="school-style layout-row-flex-start-top">
+   <div class="left-info layout-column-flex-end-center">
+       <div class="images-container">
+            <div>
+                <img src="../assets/img/forme_triangulaire.jpg"/>
+                <div class="logo-school">
+                    <img src="../assets/img/Gobelins_School_of_the_Image_logo.svg"/>
+                </div>
+            </div>
+       </div>
+       <a href="#" class="lr-link-button">Conserver en pdf</a>
+   </div>
+   <div class="right-info layout-column-flex-start-start">
+    <div class="school-title">
+        <h1>Les Gobelins</h1>
+        <h2>- Digital</h2>
+    </div>
+    <div class="layout-row-flex-start-center duree">
+        <div>Durée du cursus</div>
+        <div class="layout-row-center-center circle"><span>2</span><div>ans</div></div>
+    </div>
+    <ul class="layout-row-space-around liste-3">
+        <li class="layout-column-space-around-center"><div class="layout-column-space-around-center"><span class="icon lricon-pig"></span><span>taux de réussite</span></div></li>
+        <li class="layout-column-space-around-center"><div class="layout-column-space-around-center"><span class="icon lricon-pig"></span><div><span>7000</span>/an</div></div></li>
+        <li class="layout-column-space-around-center"><div class="layout-column-space-around-center"><span class="icon lricon-pig"></span><span>notoriete</span></div></li>
+    </ul>
+    <div class="more layout-column-flex-start-center">
+        <ul class="layout-row-space-around location">
+            <li class="adresse layout-row-center-center"><span class="icon lricon-maps"></span><span>6 rue forment</span></li>
+            <li class="site layout-row-center-center"><span class="icon lricon-adresse"></span><div><span>www.iesa.com</span>/an</div></li>
+        </ul>
+        <ul class="layout-row-flex-start-top avis">
+            <li class="positif layout-column-flex-start-start">
+                <div class="layout-row-space-around">
+                    <span class="icon lricon-postive"></span>
+                    <span>positif</span>
+                </div>
+                <ul>
+                    <li><span class="dash-list">- </span><span>un truc</span></li>
+                </ul>
+            </li>
+            <li class="negatif layout-column-flex-start-start">
+                <div class="layout-row-space-around">
+                    <span class="icon lricon-negative"></span>
+                    <span>négatif</span>
+                </div>
+                <ul>
+                    <li><span class="dash-list">- </span><span>un truc</span></li>
+                                        <li><span class="dash-list">- </span><span>un truc</span></li>
+
+                    <li><span class="dash-list">- </span><span>un truc</span></li>
+
+                    <li><span class="dash-list">- </span><span>un truc</span></li>
+
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+   </div>
+</div>

@@ -58,6 +58,9 @@
     let templatingSearch =[
         {
             type:'search'
+        },
+        {
+            type:'school'
         }
     ];
 

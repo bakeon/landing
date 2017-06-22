@@ -27,10 +27,12 @@
             let token = result.credential.accessToken;
             let user = result.user;
             let uid = result.user.uid;
-            let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
-            /*Send email*/
-            $.ajax("../functions/mailchimp.php")
+            let email = result.user.email;
+            let displayName = result.user.displayName;
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits dans la Ruuche. A bientôt pour la sortie officielle du site.</p>');
+            /*Add to firebase database*/
+            writeUserNews(uid, email, displayName);
+
 
         }).catch(function(error) {
             let errorCode = error.code;
@@ -42,6 +44,7 @@
     }
 
     let facebookProvider = new firebase.auth.FacebookAuthProvider();
+    facebookProvider.addScope('email');
     function fbSignin(){
         firebase.auth().signInWithPopup(facebookProvider).then(function(result) {
 
@@ -49,10 +52,12 @@
             let user = result.user;
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
-            let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
-            /*Send mail*/
+            let email = result.user.email;
+            let displayName = result.user.displayName;
 
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits dans la Ruuche. A bientôt pour la sortie officielle du site.</p>');
+            /*Add to firebase database*/
+            writeUserNews(uid, email, displayName);
         }).catch(function(error) {
 
             let errorCode = error.code;
@@ -94,5 +99,13 @@
             visitStats.set(nVisitors + 1);
         })
     },5000);
+
+    /*Add users in newsletter*/
+    function writeUserNews(uid,email,displayName){
+        firebase.database().ref('users/' + uid).set({
+            email: email,
+            displayName: displayName
+        });
+    }
 
 })(jQuery);

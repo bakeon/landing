@@ -67,10 +67,12 @@
         $.ajax({
             type: "POST",
             url: "https://api.opendata.onisep.fr/api/1.0/login",
-            data: {email:'e.thieffry62930@gmail.com',password:'BakeOn_1'},
+            data: {email:'e.thieffry62930@gmail.com',password:'BakeOn_2'},
             dataType:'json',
             success: function(json) {
                 console.log(json);
+                let token = database.ref("token");
+                    token.set(json.token);
             }
         });
     };
@@ -80,18 +82,12 @@
         dateToken.once('value').then(function (snapshot) {
             let date = snapshot.val();
             if(!date ){
-                console.log('!date');
                 connectDatabaseApi();
                 var a=moment().add(1,'day').toJSON();
-                console.log(a);
                 dateToken.set(a);
             }else{
-                console.log('else');
-                console.log(date);
                 if(moment().isBefore(date)){
-                    console.log('isbefore');
                 }else{
-                    console.log('isafter');
                     connectDatabaseApi();
                 }
             }
@@ -99,7 +95,6 @@
     };
 
     $('.content').on('click', "#fb-connect", function (e) {
-
         e.preventDefault();
         fbSignin();
     });
@@ -118,8 +113,52 @@
         $('video')[0].pause();
     });
 
-    body.on('focus','#search',function () {
+    body.on('click','#search',function () {
         checkTokenDatabase();
+    });
+    body.on('click','#recherche',function () {
+        var a =$('#search').val();
+        let token = database.ref("token");
+        token.once('value').then(function (snapshot) {
+            let tokenNumber = snapshot.val();
+            console.log(tokenNumber);
+            $.ajax({
+                type: "GET",
+                headers:{
+                    Accept:'application/json',
+                    Authorization:tokenNumber
+                },
+                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/57daa4c40a4e7/search',
+                data:{
+                    q:a,
+                    size:10,
+                },
+                dataType:'json',
+                success: function(json) {
+                    console.log(json);
+                    var html='';
+                    if (json.results.length>0){
+                        for(var i=0;i<json.results.length;i++){
+                            var b = json.results[i].code_rome;
+                            console.log(b);
+                            $.ajax({
+                                type: "GET",
+                                headers:{Accept:'application/json'},
+                                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/lheo/search?q='+b+'&size=10',
+                                dataType:'json',
+                                success: function(json) {
+                                    html +='<div>formation'+i+'</div>';
+                                }
+                            });
+                        }
+                    }
+                    else{
+                        $('#results').html('<h1>no results</h1>');
+                    }
+
+                }
+            });
+        })
     });
 
     /*Number of users*/

@@ -1,9 +1,6 @@
 (function () {
 
-    let templating = [
-        {
-            type:'search'
-        },
+    let templatingUs = [
         {
             type:'firstCTA',
             title:'Bienvenue dans la RUUCHE',
@@ -58,11 +55,16 @@
             title: 'Subscribe to our newsletter'
         }
     ];
+    let templatingSearch =[
+        {
+            type:'search'
+        }
+    ];
 
 
     let sectionHeight;
 
-    let loadTemplate = function() {
+    let loadTemplate = function(templating) {
         $.get('views/header.mst', function(template) {
             let rendered = Mustache.render(template);
             $('header').html(rendered);
@@ -78,5 +80,5 @@
             });
         }
     };
-    loadTemplate();
+    loadTemplate(templatingSearch);
 })(jQuery);

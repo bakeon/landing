@@ -15,45 +15,153 @@ html,body{
   -moz-box-sizing: border-box;
   overflow-x: hidden;
 }
-
-main{
-  height:100%;
-  padding-top:100px;
+#closeLightboxVideo{
+  position: absolute;
+  top:20px;
+  right:20px;
 }
-
+/*header*/
 nav{
-  position: fixed;
-  box-sizing: border-box;
-  padding: 0 20px;
-  z-index: 10;
-  background: #000;
-  width: 100%;
-  -moz-box-shadow: 2px 2px 8px 0px #373737;
-  -webkit-box-shadow: 2px 2px 8px 0px #373737;
-  -o-box-shadow: 2px 2px 8px 0px #373737;
-  box-shadow: 2px 2px 8px 0px #373737;
-  filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
-  @include flex-function(row,space-between,center);
-  height:100px;
-  ul{
-    @include flex-function(row,flex-end,center);
+  padding: 20px 40px;
+  z-index:10;
+  a{
+    color:$white;
+  }
+  ul li{
+    &:first-child{
+      margin-right: 10px;
+    }
     a{
-      color:$white;
-      margin-left: 15px;
-      font-size: 40px;
+      display: block;
+      height:100%;
+      width:100%;
+    }
+  }
+  .icon{
+    font-size: 35px;
+  }
+}
+.header-container{
+  background: url("../assets/img/header-background.jpg")no-repeat center center;
+  background-size:cover;
+  height:50vh;
+  position: relative;
+  z-index:0;
+  &>nav,&>div{
+    background:rgba(27,27,27,0.78);
+    width:100%;
+  }
+  &>div{
+    flex:1;
+  }
+  &:before{
+    content: '';
+    height:100%;
+    width:100%;
+    z-index:1;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .wrapper{
+    height:75%;
+  }
+}
+.header-title{
+  h1,h2{
+    text-align: center;
+    color:$white;
+  }
+  h2{
+    font-size: 22px;
+  }
+}
+/*main*/
+
+/*search*/
+.section-container{
+  position: relative;
+}
+.search-input{
+  position: absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%,-25px);
+  height:50px;
+  width:50vw;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  &:before{
+    content: '';
+    display: block;
+    height:50%;
+    width:100%;
+    background: $white;
+    position: absolute;
+    bottom:0;
+    left:0;
+    -moz-box-shadow: 1px 1px 3px 2px #EEEEEE;
+    -webkit-box-shadow: 1px 1px 3px 2px #EEEEEE;
+    -o-box-shadow: 1px 1px 3px 2px #EEEEEE;
+    box-shadow: 1px 1px 3px 2px #EEEEEE;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#EEEEEE, Direction=134, Strength=3);
+    border-radius: 3px;
+  }
+  &:after{
+    content: '';
+    display: block;
+    height:10px;
+    width:0;
+    background: yellow;
+    position: absolute;
+    bottom:-4px;
+    left:0;
+    transition:width 0.2s ease;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+  }
+  &:hover{
+    &:after{
+      width:100%;
     }
   }
 }
-.logo{
-  width:300px;
+input[type=search] {
+  width:100%;
+  height: 100%;
+  border:none;
+  padding:5px 5px 5px 80px;
+  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  z-index:10;
 }
-.firstCTA{
-  background: url("../assets/img/bg-first-section.jpg")no-repeat center center;
-  background-size:cover;
-  color: $white;
+input[type=search]:focus {
+  outline-style: none;
 }
 
-.section{
+input[type=submit] {
+  padding: 5px 15px;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+}
+main{
+  height:100%;
+}
+
+.logo{
+  width:400px;
+}
+
+.firstCTA{
+   background: url("../assets/img/bg-first-section.jpg")no-repeat center center;
+   background-size:cover;
+   color: $white;
+}
+
+/*.section{
   display: block;
   height:calc(100% - 100px);
   .section-container{
@@ -161,6 +269,8 @@ nav{
   background: url("../assets/img/bg_video-02.svg")no-repeat center center;
 }
 
+*/
+/*
 @media screen and (max-width: 1024px ){
   .sixArticle .layout-row-top{
     @include flex-function(column,space-around,center);
@@ -192,7 +302,9 @@ nav{
 
 }
 
-.lr-CTA {
+*/
+
+/*.lr-CTA {
   display: inline-block;
   position: relative;
   padding: 20px 38px;
@@ -237,11 +349,11 @@ nav{
 }
 .social-CTA:hover img{
   transform:scale(1.1);
-}
+}*/
 
 
 
-@media only screen and (max-device-width : 1024px)  {
+/*@media only screen and (max-device-width : 1024px)  {
   .mail-content,.headline-content{
     display: block;
     width: 100%;
@@ -290,7 +402,8 @@ nav{
   }
 }
 
-
+*/
+/*
 @media screen and (max-width:640px){
   .sixArticle.section {
     height: 265%;
@@ -312,3 +425,5 @@ nav{
     background: url("../assets/img/bg_video-02.svg")no-repeat bottom center;
   }
 }
+
+*/

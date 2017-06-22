@@ -51,22 +51,27 @@
   cursor:pointer;
 }
 
-#closeLightboxVideo{
-  position: absolute;
-  top:20px;
-  right:20px;
-}
-
 .layout-column{
-  @include flex-function(column,space-around,center)
-
+  @include flex-function(column,space-around,center);
 }
-
-.layout-row{
-  @include flex-function(row,space-around,center)
+.layout-column-flex-start-center{
+  @include flex-function(column,flex-start,center);
+}
+.layout-column-space-around-center{
+  @include flex-function(column,space-around,center);
+}
+.layout-row-space-between{
+  @include flex-function(row,space-between,center);
+}
+.layout-row-space-around{
+  @include flex-function(row,space-around,center);
 }
 .layout-row-top{
-  @include flex-function(row,space-around,flex-start)
+  @include flex-function(row,space-around,flex-start);
+}
+.layout-row-flex-start-center{
+  @include flex-function(row,flex-start,center);
+
 }
 
 .lightbox{
@@ -86,7 +91,9 @@
     height:auto;
   }
 }
+.shadow{
 
+}
 .lr-CTA{
   padding: 8px 25px;
   background: $yellow;

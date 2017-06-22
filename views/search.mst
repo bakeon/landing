@@ -1,3 +1,7 @@
 <div class="section-container">
-    <input id="search" type="search" placeholder="rechercher"/>
+    <form class="search-input layout-row-flex-start-center shadow">
+        <span class="icon lricon-search"></span>
+        <input id="search" class="flex-1" type="search" placeholder="Ex : Developer"/>
+    </form>
+    <div id="results"></div>
 </div>

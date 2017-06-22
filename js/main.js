@@ -113,6 +113,12 @@
         $('video')[0].pause();
     });
 
+    body.on('click','get-more',function () {
+        var $element= $(this);
+        $element.parent('.more').toggleClass('hide');
+        $element.parent('.school-type').toggleClass('open');
+    });
+
     body.on('click','#search',function () {
         checkTokenDatabase();
     });

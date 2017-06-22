@@ -84,4 +84,5 @@
         }
     };
     loadTemplate(templatingSearch);
+
 })(jQuery);

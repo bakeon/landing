@@ -166,46 +166,74 @@ input[type=submit] {
 }
 
 .school-style{
+  height:380px;
+  position: relative;
+  &.open{
+    height:665px;
+  }
+  .more{
+
+  }
   h1{
     font-weight:500;
   }
   h2{
     font-weight:400;
   }
+  border-bottom: 1px solid $grey;
+  .get-more{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    height:30px;
+    width:30px;
+    position: absolute;
+    left:50%;
+    bottom:-15px;
+    transform: translateX(-50%);
+    font-size: 20px;
+    border-radius:15px;
+    border:1px solid $grey;
+    background: $white;
+    cursor: pointer;
+  }
 }
 
 .left-info{
-  width:33%;
+  width:310px;
   height:100%;
   position: relative;
+  .lr-link-button{
+    margin-bottom: 20px;
+  }
   .images-container{
     @include flex-function(row,center,center);
     width:100%;
     flex:1;
     position: relative;
     &>div{
-      width:30vw;
-      height:30vw;
+      width:80%;
+      height:80%;
       position:absolute;
       top:0;
       left:50%;
       transform:translate(-50%,-70px);
       &>img{
-        width:80%;
+        width:90%;
         height:auto;
         @include absolute-center();
       }
     }
 
     .logo-school{
-      width:120px;
-      height:120px;
-      border-radius:60px;
+      width:40%;
+      height:40%;
+      border-radius:50%;
       border:2px solid $blue;
       background: $white;
       position: absolute;
-      bottom:20px;
-      left:20px;
+      bottom:6%;
+      left:6%;
       img{
         width:80%;
         height:auto;
@@ -339,15 +367,15 @@ input[type=submit] {
 
   }
   .duree{
-    height:60px;
+    height:40px;
     width:100%;
     position: relative;
     background: url("../assets/img/cursus.svg")no-repeat center center;
-    background-size:110% ;
+    background-size:100% ;
     margin-bottom: 25px;
     font-size: 14px;
     &>div{
-      margin-left: 5px;
+      margin-left: 30px;
     }
     .circle{
       height:60px;
@@ -361,7 +389,9 @@ input[type=submit] {
   }
 
 }
-
+.more.hide{
+ display: none;
+}
 
 main{
   height:100%;

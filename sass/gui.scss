@@ -134,6 +134,7 @@
   color:$black;
   box-sizing: border-box;
   font-size: 14px;
+  cursor: pointer;
   &:hover{
     color: $white;
     background: $yellow;
@@ -157,8 +158,11 @@
     height:auto;
   }
 }
-.shadow{
-
+.lr-shadow{
+  -moz-box-shadow: 1px 1px 3px 2px #EEEEEE;
+  -webkit-box-shadow: 1px 1px 3px 2px #EEEEEE;
+  -o-box-shadow: 1px 1px 3px 2px #EEEEEE;
+  box-shadow: 1px 1px 3px 2px #EEEEEE;
 }
 .lr-CTA{
   padding: 8px 25px;

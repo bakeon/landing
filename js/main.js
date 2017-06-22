@@ -6,12 +6,12 @@
      * Firebase initialization
      */
     let config = {
-        apiKey: "AIzaSyD-GvA3P8duVu7xi1xCfHnKy8lRU3fowWA",
-        authDomain: "bakeon-landing.firebaseapp.com",
-        databaseURL: "https://bakeon-landing.firebaseio.com",
-        projectId: "bakeon-landing",
-        storageBucket: "bakeon-landing.appspot.com",
-        messagingSenderId: "260657155203"
+        apiKey: "AIzaSyAVWhbN4iOGAFi_jOHntgcX42_UIR9bgIk",
+        authDomain: "laruuche.firebaseapp.com",
+        databaseURL: "https://laruuche.firebaseio.com",
+        projectId: "laruuche",
+        storageBucket: "laruuche.appspot.com",
+        messagingSenderId: "566779256624"
     };
     firebase.initializeApp(config);
     let database = firebase.database();
@@ -28,9 +28,9 @@
             let user = result.user;
             let uid = result.user.uid;
             let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
             /*Send email*/
-
+            $.ajax("../functions/mailchimp.php")
 
         }).catch(function(error) {
             let errorCode = error.code;

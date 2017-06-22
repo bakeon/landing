@@ -41,6 +41,13 @@ gulp.task('html', function() {
         .pipe(gulp.dest('public/'));
 });
 
+//Duplicate functions files in dist dir
+
+gulp.task('functions',function () {
+    gulp.src('functions/**')
+        .pipe(gulp.dest('public/functions'));
+});
+
 // Duplicate assets files in dist
 
 gulp.task('assets',function () {
@@ -64,6 +71,7 @@ gulp.task('watch', function() {
     gulp.watch('sass/*.scss', ['sass']).on('change', browserSync.reload);
     gulp.watch('**/index.html',['html']).on('change', browserSync.reload);
     gulp.watch('views/*.mst',['views']).on('change', browserSync.reload);
+    gulp.watch('functions/*.php',['functions']).on('change', browserSync.reload);
 
 });
 

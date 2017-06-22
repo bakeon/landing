@@ -7,7 +7,7 @@ html,body{
   padding: 0;
   margin: 0;
   font-size: 18px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
   border:0;
   border-spacing:0;
@@ -18,45 +18,227 @@ html,body{
 
 main{
   height:100%;
-  padding-top:120px;
+  padding-top:100px;
 }
 
 nav{
   position: fixed;
+  box-sizing: border-box;
+  padding: 0 20px;
   z-index: 10;
-  background: rgba(238,254,253,0.9);
-  height:120px;
+  background: #000;
   width: 100%;
   -moz-box-shadow: 2px 2px 8px 0px #373737;
   -webkit-box-shadow: 2px 2px 8px 0px #373737;
   -o-box-shadow: 2px 2px 8px 0px #373737;
   box-shadow: 2px 2px 8px 0px #373737;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#373737, Direction=135, Strength=10);
-  @include flex-function(row,flex-end,center);
-  height:120px;
+  @include flex-function(row,space-between,center);
+  height:100px;
   ul{
     @include flex-function(row,flex-end,center);
+    a{
+      color:$white;
+      margin-left: 15px;
+      font-size: 40px;
+    }
   }
 }
 .logo{
-  position: absolute;
-  top:-27px;
-  left:4%;
   width:300px;
+}
+.firstCTA{
+  background: url("../assets/img/bg-first-section.jpg")no-repeat center center;
+  background-size:cover;
+  color: $white;
 }
 
 .section{
   display: block;
-  height:calc(100% - 120px);
+  height:calc(100% - 100px);
   .section-container{
     height:100%;
     width:100%;
+    &>div{
+      height:60%;
+      @include flex-function(column,space-around,center);
+    }
     @include flex-function(column,space-around,center);
     .articleContainer{
       width:100%;
     }
   }
 }
+.subscribe{
+  .lr-CTA{
+    @include flex-function(row,space-between,center)
+  }
+  #fb-connect{
+    margin-right: 20px;
+  }
+}
+.sixArticle{
+  background: url("../assets/img/sigle_logo_gris.svg")no-repeat center center;
+  background-size: contain;
+  &.section .section-container>div{
+    height:70%;
+  }
+  .layout-row-top{
+    width:100%;
+    margin-bottom: 40px;
+  }
+  .icon{
+    margin-bottom: 20px;
+  }
+  img{
+    width:25px;
+    height:auto;
+    margin-bottom: 20px;
+
+  }
+  h1{
+    position: relative;
+    &:after{
+      display: block;
+      content: '';
+      width:35px;
+      height:1px;
+      background: $black;
+      position: absolute;
+      bottom:-15px;
+      left:50%;
+      transform: translateX(-50%);
+    }
+  }
+  article{
+    width:23%;
+    text-align: center;
+    h3{
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 400 ;
+      font-size: 16px;
+    }
+    p{
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+}
+
+.video{
+  position: relative;
+  background-size: cover;
+  .player-action{
+    width:100%;
+    height:100%;
+    background: url("../assets/img/player.svg")no-repeat center center;
+  }
+  &.section .section-container>div{
+    height:80%;
+  }
+}
+
+.hive{
+  display: block;
+  content: '';
+  height:100vh;
+  width:50vw;
+  position: absolute;
+  font-size: 0;
+  overflow: hidden;
+  background-size:contain ;
+}
+.hive1{
+  top:0;
+  left:-15vw;
+  background: url("../assets/img/bg_video-01.svg")no-repeat center center;
+}
+.hive2{
+  bottom:-10vh;
+  right:-15vw;
+  background: url("../assets/img/bg_video-02.svg")no-repeat center center;
+}
+
+@media screen and (max-width: 1024px ){
+  .sixArticle .layout-row-top{
+    @include flex-function(column,space-around,center);
+    .section-container{
+      @include flex-function(column,space-around,center);
+      &>div{
+        @include flex-function(column,space-around,center);
+      }
+    }
+  }
+  .logo{
+    width:175px;
+  }
+  .section{
+    h1{
+      text-align: center;
+    }
+  }
+  .sixArticle.section{
+    height:200%;
+  }
+  .sixArticle.section .section-container>div{
+    height:80%;
+    article{
+      width:60%;
+      margin-bottom: 40px;
+    }
+  }
+
+}
+
+.lr-CTA {
+  display: inline-block;
+  position: relative;
+  padding: 20px 38px;
+  top: 0;
+  font-size: 18px;
+  border-radius: 100px;
+  border-bottom: 1px solid rgba(255, 212, 29, 0.5);
+  background: rgb(255, 212, 29);
+  color: #fff;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.lr-CTA:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+
+  -webkit-transform: rotateX(20deg);
+  -moz-transform: rotateX(20deg);
+  -ms-transform: rotateX(20deg);
+  transform: rotateX(20deg);
+}
+
+.lr-CTA:active {
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+  background: rgb(255, 212, 29);
+}
+
+.social-CTA img{
+  width:100px;
+  transition: all .4s ease;
+}
+.social-CTA:hover img{
+  transform:scale(1.1);
+}
+
 
 
 @media only screen and (max-device-width : 1024px)  {
@@ -65,7 +247,7 @@ nav{
     width: 100%;
   }
   .mail-content{
-    margin-top:50px
+    margin-top:50px;
   }
   .mail-text, .cta-content{
     width: 100%;
@@ -80,5 +262,53 @@ nav{
   }
   .main{
     height: 100%;
+  }
+  .logo{
+    width:175px;
+  }
+  .sixArticle .layout-row-top{
+    @include flex-function(column,center,center);
+  }
+  .sixArticle .layout-row-top{
+    @include flex-function(column,space-around,center);
+    .section-container{
+      @include flex-function(column,space-around,center);
+      &>div{
+        @include flex-function(column,space-around,center);
+      }
+    }
+  }
+  .sixArticle.section{
+    height:200%;
+  }
+  .sixArticle.section .section-container>div{
+    height:80%;
+    article{
+      width:60%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+
+@media screen and (max-width:640px){
+  .sixArticle.section {
+    height: 265%;
+  }
+  .layout-row{
+    flex-direction: column;
+  }
+  .subscribe #fb-connect{
+    margin:0;
+    margin-bottom: 15px;
+  }
+  .hive{
+    width:70vw;
+  }
+  .hive1{
+    background: url("../assets/img/bg_video-01.svg")no-repeat top center;
+  }
+  .hive2{
+    background: url("../assets/img/bg_video-02.svg")no-repeat bottom center;
   }
 }

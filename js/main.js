@@ -50,7 +50,7 @@
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
             let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officiel du site.</p>');
+            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez GuideBook. A bientôt pour la sortie officielle du site.</p>');
             /*Send mail*/
 
         }).catch(function(error) {
@@ -63,13 +63,12 @@
         });
     }
 
-    $('document').on('click', "#fb-connect", function (e) {
-        console.log('ok');
+    $('.content').on('click', "#fb-connect", function (e) {
+
         e.preventDefault();
         fbSignin();
     });
-
-    $('document').on('click', '#google-connect', function (e) {
+    $('.content').on('click', '#google-connect', function (e) {
         e.preventDefault();
         googleSignin();
     });
@@ -81,6 +80,7 @@
     });
     body.on('click','#closeLightboxVideo,.lightbox-container',function () {
         $('#lightboxVideo').addClass('hide');
+        $('video')[0].pause();
     });
 
 

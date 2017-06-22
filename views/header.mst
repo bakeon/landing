@@ -1,7 +1,7 @@
 <nav>
-    <a href="index.html"><img class="logo" src="assets/img/guidebook.svg"></a>
+    <a href="index.html"><img class="logo" src="assets/img/logo-inline.svg"></a>
     <ul>
-        <li><a href="#" target="_blank">facebook</a></li>
-        <li><a href="#" target="_blank">twitter</a></li>
+        <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebookalve"></span></a></li>
+        <li><a href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitteralve"></span></a></li>
     </ul>
 </nav>

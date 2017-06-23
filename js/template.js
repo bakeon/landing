@@ -48,12 +48,20 @@
 
     let sectionHeight;
 
-    let loadTemplate = function(templating) {
+    let loadTemplate = function(templating,header) {
         $('main').html('');
-        $.get('views/header.mst', function (template) {
-            let rendered = Mustache.render(template);
-            $('header').html(rendered);
-        });
+        $('header').html('');
+        if(header=='know'){
+            $.get('views/headerKnow.mst', function (template) {
+                let rendered = Mustache.render(template);
+                $('header').html(rendered);
+            });
+        }else{
+            $.get('views/header.mst', function (template) {
+                let rendered = Mustache.render(template);
+                $('header').html(rendered);
+            });
+        }
         for (let i = 0; i <= templating.length - 1; i = i + 1) {
             $('main').append('<div id="' + templating[i].type + i + '" class="' + templating[i].type + ' section"></div>');
         }
@@ -64,17 +72,15 @@
                 $('#' + templating[i].type + i + '').html(rendered);
             });
         }
-    }
+    };
     var body=$('body');
     loadTemplate(templatingSearch);
 
     body.on('click','.know',function () {
-        $(this).removeClass('know').addClass('home');
-       loadTemplate(templateKnow);
+       loadTemplate(templateKnow,'know');
     });
     body.on('click','.home',function () {
-        $(this).removeClass('home').addClass('know');
-        loadTemplate(templatingSearch);
+        loadTemplate(templatingSearch,'home');
     });
 
     let $window = $(window);

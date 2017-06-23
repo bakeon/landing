@@ -29,17 +29,11 @@
             let token = result.credential.accessToken;
             let user = result.user;
             let uid = result.user.uid;
-<<<<<<< HEAD
             let email = result.user.email;
             let displayName = result.user.displayName;
             $('.cta-content').html('<p>Bravo, vous êtes inscrits dans la Ruuche. A bientôt pour la sortie officielle du site.</p>');
             /*Add to firebase database*/
             writeUserNews(uid, email, displayName);
-=======
-            let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez La Ruuche. A bientôt pour la sortie officiel du site.</p>');
-            /*Send email*/
->>>>>>> dev/edouard
 
 
         }).catch(function (error) {
@@ -52,21 +46,15 @@
     }
 
     let facebookProvider = new firebase.auth.FacebookAuthProvider();
-<<<<<<< HEAD
     facebookProvider.addScope('email');
     function fbSignin(){
         firebase.auth().signInWithPopup(facebookProvider).then(function(result) {
-=======
 
-    function fbSignin() {
-        firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
->>>>>>> dev/edouard
 
             let token = result.credential.accessToken;
             let user = result.user;
             //Sign with Google add Beta User in firebase
             let uid = result.user.uid;
-<<<<<<< HEAD
             let email = result.user.email;
             let displayName = result.user.displayName;
 
@@ -74,13 +62,6 @@
             /*Add to firebase database*/
             writeUserNews(uid, email, displayName);
         }).catch(function(error) {
-=======
-            let mail = result.user.email;
-            $('.cta-content').html('<p>Bravo, vous êtes inscrits chez La Ruuche. A bientôt pour la sortie officielle du site.</p>');
-            /*Send mail*/
-
-        }).catch(function (error) {
->>>>>>> dev/edouard
 
             let errorCode = error.code;
             let errorMessage = error.message;

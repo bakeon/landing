@@ -1,4 +1,4 @@
-<div class="school-style lr-shadow layout-row-flex-start-top">
+<div class="school-style school-{{@index}} lr-shadow layout-row-flex-start-top">
    <div class="left-info layout-column-flex-end-center">
        <div class="images-container">
             <div>
@@ -46,17 +46,13 @@
                 </div>
                 <ul>
                     <li><span class="dash-list">- </span><span>un truc</span></li>
-                                        <li><span class="dash-list">- </span><span>un truc</span></li>
-
                     <li><span class="dash-list">- </span><span>un truc</span></li>
-
                     <li><span class="dash-list">- </span><span>un truc</span></li>
-
-
+                    <li><span class="dash-list">- </span><span>un truc</span></li>
                 </ul>
             </li>
         </ul>
     </div>
    </div>
-   <span class="icon get-more icon lricon-more lr-shadow"></span>
+   <span class="icon get-more icon lricon-more lr-shadow" data-target="{{@index}}"></span>
 </div>

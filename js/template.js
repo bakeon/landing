@@ -61,6 +61,12 @@
         },
         {
             type:'school'
+        },
+        {
+            type : 'video',
+            url : 'https://www.youtube.com/watch?v=_KztNIg4cvE',
+            title:'The video Title',
+            icon:'play'
         }
     ];
 

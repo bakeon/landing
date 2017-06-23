@@ -105,18 +105,24 @@
 
     let body = $('body');
 
-    body.on('click','#playVideo',function () {
-       $('#lightboxVideo').removeClass('hide');
-    });
-    body.on('click','#closeLightboxVideo,.lightbox-container',function () {
-        $('#lightboxVideo').addClass('hide');
-        $('video')[0].pause();
+    body.on('click','.playVideoInLightbox, #closeLightboxVideo, .lightbox-shadow',function () {
+        body.toggleClass('lightbox-open');
+        var currentVideo = $('.lightbox-container video')[0];
+        console.log(currentVideo);
+        if (currentVideo.paused){
+            currentVideo.play();
+        }else{
+            currentVideo.pause();
+        }
     });
 
-    body.on('click','get-more',function () {
-        var $element= $(this);
-        $element.parent('.more').toggleClass('hide');
-        $element.parent('.school-type').toggleClass('open');
+    body.on('click','.get-more',function () {
+        console.log('get more');
+        var target= $(this).data('target');
+        console.log(target);
+        $(this).toggleClass('open')
+        $('.school-'+target+'').toggleClass('open');
+        $('.school-'+target+' .more').toggleClass('hide');
     });
 
     body.on('click','#search',function () {

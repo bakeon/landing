@@ -1,14 +1,14 @@
 <div class="section-container">
     <!--<span id="playVideo" class="icon lricon-{{icon}} pointer"></span>-->
-    <div id="playVideo" class="player-action"></div>
+    <div class="playVideoInLightbox player-action">yo</div>
     <span class="hive1 hive">hive</span>
     <span class="hive2 hive">hive</span>
 </div>
-
-<div id="lightboxVideo" class="hide lightbox">
-    <span id="closeLightboxVideo" class="icon rlicon-close pointer"></span>
-    <div class="layout-column lightbox-container">
+<div class="lightbox-container">
+    <div class="lightbox-shadow"></div>
+    <div class="lightbox layout-column">
+        <span id="closeLightboxVideo" class="icon rlicon-close pointer"></span>
         <video controls src="../assets/video/Teaser-laRuuche.mp4"></video>
     </div>
-    <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 </div>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>

@@ -110,28 +110,28 @@ nav {
     &.link-page {
       width: 300px;
       z-index: 100;
-      .icon{
+      .icon {
         font-size: 50px;
-        margin:0;
+        margin: 0;
       }
-      .lr-link-button{
-        border:none;
+      .lr-link-button {
+        border: none;
       }
     }
     &.social {
       z-index: 100;
-      height:100%;
+      height: 100%;
       box-sizing: border-box;
       padding: 20px;
-      li{
-        &:first-child{
-          margin-right:10px;
+      li {
+        &:first-child {
+          margin-right: 10px;
         }
       }
-      a{
+      a {
         color: $black;
       }
-      .icon{
+      .icon {
         font-size: 30px;
       }
     }
@@ -170,19 +170,19 @@ nav {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   background: $white;
-  transition: width 0.25s ease, left 0.25s ease,transform 0.25s ease;
+  transition: width 0.25s ease, left 0.25s ease, transform 0.25s ease;
   z-index: 1;
-  &>div{
-    width:100%;
-    height:calc(100% - 8px);
-    border-radius:3px;
+  & > div {
+    width: 100%;
+    height: calc(100% - 8px);
+    border-radius: 3px;
     background: $white;
   }
-  &.open{
-    width:100vw;
+  &.open {
+    width: 100vw;
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     transform: translate(0);
   }
   .search-input {
@@ -266,6 +266,7 @@ input[type=submit] {
   height: 380px;
   position: relative;
   margin-bottom: 140px;
+  background: $white;
   &.open {
     height: 665px;
     border: 1px solid $yellow;
@@ -496,12 +497,145 @@ input[type=submit] {
 
 }
 
+.fourthArticle {
+  padding:300px 20px 40px 20px;
+
+  .title-container{
+    height:380px;
+    width:380px;
+    position: absolute;
+    top:-330px;
+    left:50%;
+    transform:translateX(-50%);
+    .triangle-1{
+      position: absolute;
+      height: 280px;
+      width:280px;
+      font-size: 0;
+      background: url("../assets/img/alveoleombre.svg")no-repeat right bottom;
+      z-index:1;
+      bottom:60px;
+      right:0;
+    }
+    h1{
+      color:$blue;
+      font-size: 40px;
+      transform:translate(-50px,-70px);
+      z-index:2;
+    }
+    .big-four{
+      height: 400px;
+      width:400px;
+      background: url("../assets/img/gros4.svg")no-repeat right top;
+      background-size: 100%;
+      z-index:2;
+
+    }
+  }
+
+  .article-container{
+
+  }
+  .article-container {
+    width: 100%;
+    height: 270px;
+    article {
+      width: 40vw;
+      .number-etape{
+        font-size: 100px;
+        color:$grey;
+      }
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius:3px;
+
+        color: $blue;
+        font-size: 20px;
+        line-height: 35px;
+        .icon{
+          color: $yellow;
+          font-size:35px;
+        }
+      }
+    }
+    .order-1 {
+      transform: translateX(20vw);
+      &>div {
+        order: 0;
+        &>div{
+          position: absolute;
+          height: 280px;
+          width:280px;
+          font-size: 0;
+          background: url("../assets/img/alveoleombre2.svg")no-repeat center center;
+          left:-100px;
+          bottom:-30px;
+          z-index:1;
+          .icon{
+            position: absolute;
+            top:-20px;
+            left:0;
+          }
+        }
+      }
+      p {
+        z-index:2;
+        order: 1;
+        .icon {
+          margin-right: 20px;
+          order: 0;
+          & + span {
+            order: 1;
+          }
+        }
+      }
+    }
+    .order-2 {
+      transform: translateX(-20vw);
+      &>div {
+        order: 1;
+        &>div{
+          position: absolute;
+          height: 280px;
+          width:280px;
+          font-size: 0;
+          background: url("../assets/img/alveoleombre.svg")no-repeat center center;
+          right:-100px;
+          bottom:-30px;
+          z-index:1;
+          .icon{
+            position: absolute;
+            top:-20px;
+            right:0;
+          }
+        }
+      }
+      p {
+        z-index: 2;
+        order: 0;
+        .icon {
+          margin-left: 20px;
+          order: 1;
+          & + span {
+            order: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 .more.hide {
   display: none;
 }
 
 main {
   height: 100%;
+  background: $bg-grey;
 }
 
 .logo {

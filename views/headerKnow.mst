@@ -2,18 +2,17 @@
     <nav class="layout-row-space-between">
         <div class="layout-row-space-between">
             <span class="icon lricon-picto-logo"></span>
-            <a href="#" class="know layout-row-space-between lr-link-button">Nous connaître</a>
+            <a href="#" class="home layout-row-space-between lr-link-button">Nous connaître</a>
         </div>
 
         <ul class="layout-row-space-between">
-            <li><a title="Page Facebook de La Ruuche" class="social-facebook" href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebook"></span></a></li>
-            <li><a title="Profil Twitter de La Ruuche" class="social-twitter"href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitter"></span></a></li>
+            <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebook"></span></a></li>
+            <li><a href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitter"></span></a></li>
         </ul>
     </nav>
     <div class="header-title layout-column-space-around-center">
         <div class="wrapper layout-column-space-around-center">
             <h1><img class="logo" src="assets/img/logo-inline.svg"></h1>
-            <h2>Choisis ton métier de rêve dans cette ruche</h2>
         </div>
     </div>
 </div>

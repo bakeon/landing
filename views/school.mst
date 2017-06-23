@@ -26,8 +26,8 @@
     </ul>
     <div class="more layout-column-flex-start-center hide">
         <ul class="layout-row-space-around location">
-            <li class="adresse layout-row-center-center"><span class="icon lricon-maps"></span><span>6 rue forment</span></li>
-            <li class="site layout-row-center-center"><span class="icon lricon-adresse"></span><div><span>www.iesa.com</span>/an</div></li>
+            <li class="adresse layout-row-center-center"><span class="icon lricon-adresse"></span><span>6 rue forment</span></li>
+            <li class="site layout-row-center-center"><span class="icon lricon-website"></span><div><span>www.iesa.com</span>/an</div></li>
         </ul>
         <ul class="layout-row-flex-start-top avis">
             <li class="positif layout-column-flex-start-start">
@@ -54,5 +54,5 @@
         </ul>
     </div>
    </div>
-   <span class="icon get-more icon lricon-more lr-shadow" data-target="{{@index}}"></span>
+   <span class="icon get-more icon lricon-more" data-target="{{@index}}"></span>
 </div>

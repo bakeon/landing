@@ -1,7 +1,22 @@
 <div class="section-container">
-    <form class="search-input layout-row-flex-start-center shadow">
-        <span class="icon lricon-search"></span>
-        <input id="search" class="flex-1" type="search" placeholder="Ex : Developer"/>
+    <form class="search-bar layout-row-flex-start-center shadow">
+        <div class="layout-row-flex-start-start">
+            <div class="extend-header no-scrolled link-page layout-row-flex-start-center">
+                 <span class="icon lricon-picto-logo"></span>
+                 <a href="#search" class="layout-row-space-between lr-link-button">Nous connaître</a>
+            </div>
+            <div class="search-input">
+                <span class="icon lricon-search"></span>
+                <input id="search" class="flex-1" type="search" placeholder="Ex : Developer"/>
+            </div>
+            <ul class="extend-header layout-row-space-between no-scrolled social layout-row-flex-start-center">
+                <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebook"></span></a></li>
+                <li><a href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitter"></span></a></li>
+            </ul>
+        </div>
     </form>
-    <div id="results"></div>
+    <div class="layout-column-space-around-center">
+        <h3>Ton futur établissement</h3>
+        <span class="icon lricon-scroll"></span>
+    </div>
 </div>

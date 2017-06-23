@@ -1,9 +1,13 @@
 <div class="container header-container layout-column-flex-start-center">
     <nav class="layout-row-space-between">
-        <a href="#search" class="layout-row-space-between"><span class="icon lricon-logo-picto"></span>Nous connaître</a>
+        <div class="layout-row-space-between">
+            <span class="icon lricon-picto-logo"></span>
+            <a href="#search" class="layout-row-space-between lr-link-button">Nous connaître</a>
+        </div>
+
         <ul class="layout-row-space-between">
-            <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebookalve"></span></a></li>
-            <li><a href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitteralve"></span></a></li>
+            <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebook"></span></a></li>
+            <li><a href="https://twitter.com/LaRuuche" target="_blank"><span class="icon lricon-twitter"></span></a></li>
         </ul>
     </nav>
     <div class="header-title layout-column-space-around-center">

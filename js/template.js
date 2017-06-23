@@ -61,12 +61,6 @@
         },
         {
             type:'school'
-        },
-        {
-            type : 'video',
-            url : 'https://www.youtube.com/watch?v=_KztNIg4cvE',
-            title:'The video Title',
-            icon:'play'
         }
     ];
 
@@ -90,5 +84,27 @@
         }
     };
     loadTemplate(templatingSearch);
+
+    let $window = $(window);
+    var stopheight;
+    var resizePage = function () {
+        stopheight=($window.height()/2)-25;
+        console.log(stopheight);
+    };
+    resizePage();
+    $window.resize(function () {
+        resizePage();
+    });
+    $window.scroll(function () {
+        var scrollFromTop = $window.scrollTop();
+        console.log(scrollFromTop);
+        if(scrollFromTop>=stopheight){
+            $('.extend-header').removeClass('no-scrolled');
+            $('.search-bar').addClass('open');
+        }else{
+            $('.extend-header').addClass('no-scrolled');
+            $('.search-bar').removeClass('open');
+        }
+    });
 
 })(jQuery);

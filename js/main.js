@@ -1,7 +1,7 @@
 /**
  * Created by POL on 12/06/2017.
  */
-(function($){
+(function ($) {
     /**
      * Firebase initialization
      */
@@ -22,9 +22,10 @@
      * @type {firebase.auth.GoogleAuthProvider}
      */
     let googleProvider = new firebase.auth.GoogleAuthProvider();
+
     function googleSignin() {
         firebase.auth()
-            .signInWithPopup(googleProvider).then(function(result) {
+            .signInWithPopup(googleProvider).then(function (result) {
             let token = result.credential.accessToken;
             let user = result.user;
             let uid = result.user.uid;
@@ -33,7 +34,7 @@
             /*Send email*/
 
 
-        }).catch(function(error) {
+        }).catch(function (error) {
             let errorCode = error.code;
             let errorMessage = error.message;
 
@@ -43,8 +44,9 @@
     }
 
     let facebookProvider = new firebase.auth.FacebookAuthProvider();
-    function fbSignin(){
-        firebase.auth().signInWithPopup(facebookProvider).then(function(result) {
+
+    function fbSignin() {
+        firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
 
             let token = result.credential.accessToken;
             let user = result.user;
@@ -54,7 +56,7 @@
             $('.cta-content').html('<p>Bravo, vous êtes inscrits chez La Ruuche. A bientôt pour la sortie officielle du site.</p>');
             /*Send mail*/
 
-        }).catch(function(error) {
+        }).catch(function (error) {
 
             let errorCode = error.code;
             let errorMessage = error.message;
@@ -63,16 +65,17 @@
             console.log(error.message)
         });
     }
-    let connectDatabaseApi =function () {
+
+    let connectDatabaseApi = function () {
         $.ajax({
             type: "POST",
             url: "https://api.opendata.onisep.fr/api/1.0/login",
-            data: {email:'e.thieffry62930@gmail.com',password:'BakeOn_2'},
-            dataType:'json',
-            success: function(json) {
+            data: {email: 'e.thieffry62930@gmail.com', password: 'BakeOn_2'},
+            dataType: 'json',
+            success: function (json) {
                 console.log(json);
                 let token = database.ref("token");
-                    token.set(json.token);
+                token.set(json.token);
             }
         });
     };
@@ -81,13 +84,13 @@
         let dateToken = database.ref("dateAccesToken");
         dateToken.once('value').then(function (snapshot) {
             let date = snapshot.val();
-            if(!date ){
+            if (!date) {
                 connectDatabaseApi();
-                var a=moment().add(1,'day').toJSON();
+                var a = moment().add(1, 'day').toJSON();
                 dateToken.set(a);
-            }else{
-                if(moment().isBefore(date)){
-                }else{
+            } else {
+                if (moment().isBefore(date)) {
+                } else {
                     connectDatabaseApi();
                 }
             }
@@ -105,66 +108,66 @@
 
     let body = $('body');
 
-    body.on('click','.playVideoInLightbox, #closeLightboxVideo, .lightbox-shadow',function () {
+    body.on('click', '.playVideoInLightbox, #closeLightboxVideo, .lightbox-shadow', function () {
         body.toggleClass('lightbox-open');
         var currentVideo = $('.lightbox-container video')[0];
         console.log(currentVideo);
-        if (currentVideo.paused){
+        if (currentVideo.paused) {
             currentVideo.play();
-        }else{
+        } else {
             currentVideo.pause();
         }
     });
 
-    body.on('click','.get-more',function () {
+    body.on('click', '.get-more', function () {
         console.log('get more');
-        var target= $(this).data('target');
+        var target = $(this).data('target');
         console.log(target);
-        $(this).toggleClass('open')
-        $('.school-'+target+'').toggleClass('open');
-        $('.school-'+target+' .more').toggleClass('hide');
+        $(this).toggleClass('open');
+        $('.school-' + target + '').toggleClass('open');
+        $('.school-' + target + ' .more').toggleClass('hide');
     });
 
-    body.on('click','#search',function () {
+    body.on('click', '#search', function () {
         checkTokenDatabase();
     });
-    body.on('click','#recherche',function () {
-        var a =$('#search').val();
+    body.on('click', '#recherche', function () {
+        var a = $('#search').val();
         let token = database.ref("token");
         token.once('value').then(function (snapshot) {
             let tokenNumber = snapshot.val();
             console.log(tokenNumber);
             $.ajax({
                 type: "GET",
-                headers:{
-                    Accept:'application/json',
-                    Authorization:tokenNumber
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: tokenNumber
                 },
                 url: 'https://api.opendata.onisep.fr/api/1.0/dataset/57daa4c40a4e7/search',
-                data:{
-                    q:a,
-                    size:10,
+                data: {
+                    q: a,
+                    size: 10,
                 },
-                dataType:'json',
-                success: function(json) {
+                dataType: 'json',
+                success: function (json) {
                     console.log(json);
-                    var html='';
-                    if (json.results.length>0){
-                        for(var i=0;i<json.results.length;i++){
+                    var html = '';
+                    if (json.results.length > 0) {
+                        for (var i = 0; i < json.results.length; i++) {
                             var b = json.results[i].code_rome;
                             console.log(b);
                             $.ajax({
                                 type: "GET",
-                                headers:{Accept:'application/json'},
-                                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/lheo/search?q='+b+'&size=10',
-                                dataType:'json',
-                                success: function(json) {
-                                    html +='<div>formation'+i+'</div>';
+                                headers: {Accept: 'application/json'},
+                                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/lheo/search?q=' + b + '&size=10',
+                                dataType: 'json',
+                                success: function (json) {
+                                    html += '<div>formation' + i + '</div>';
                                 }
                             });
                         }
                     }
-                    else{
+                    else {
                         $('#results').html('<h1>no results</h1>');
                     }
 
@@ -175,13 +178,13 @@
 
     /*Number of users*/
     //Ajout d'un visiteur dans la base
-    let countVisit = setTimeout(function(){
+    let countVisit = setTimeout(function () {
         //Save in firebase number of visitors
         let visitStats = database.ref("totalVisitors");
         visitStats.once('value').then(function (snapshot) {
             let nVisitors = snapshot.val();
             visitStats.set(nVisitors + 1);
         })
-    },5000);
+    }, 5000);
 
 })(jQuery);

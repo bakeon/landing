@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'laRucheFont';
-  src: url('#{$icomoon-font-path}/laRucheFont.eot?6fz2z7');
-  src: url('#{$icomoon-font-path}/laRucheFont.eot?6fz2z7#iefix') format('embedded-opentype'),
-  url('#{$icomoon-font-path}/laRucheFont.ttf?6fz2z7') format('truetype'),
-  url('#{$icomoon-font-path}/laRucheFont.woff?6fz2z7') format('woff'),
-  url('#{$icomoon-font-path}/laRucheFont.svg?6fz2z7#laRucheFont') format('svg');
+  src:  url('#{$icomoon-font-path}/laRucheFont.eot?krrud1');
+  src:  url('#{$icomoon-font-path}/laRucheFont.eot?krrud1#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/laRucheFont.ttf?krrud1') format('truetype'),
+  url('#{$icomoon-font-path}/laRucheFont.woff?krrud1') format('woff'),
+  url('#{$icomoon-font-path}/laRucheFont.svg?krrud1#laRucheFont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,60 +26,76 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lricon-picto-logo {
+  &:before {
+    content: $lricon-picto-logo;
+  }
+}
 .lricon-facebook {
   &:before {
     content: $lricon-facebook;
   }
 }
-
 .lricon-more {
   &:before {
-    content: $lricon-fleche_en_savoir_plus;
+    content: $lricon-more;
   }
 }
-
+.lricon-website {
+  &:before {
+    content: $lricon-website;
+  }
+}
 .lricon-adresse {
   &:before {
-    content: $lricon-maison;
+    content: $lricon-adresse;
   }
 }
-
-.lricon-maps {
-  &:before {
-    content: $lricon-maps;
-  }
-}
-
 .lricon-negative {
   &:before {
     content: $lricon-negative;
   }
 }
-
 .lricon-pig {
   &:before {
     content: $lricon-pig;
   }
 }
-
 .lricon-postive {
   &:before {
-    content: $lricon-postitive-01;
+    content: $lricon-postive;
   }
 }
-
 .lricon-scroll {
   &:before {
     content: $lricon-scroll;
   }
 }
-
 .lricon-search {
   &:before {
     content: $lricon-search;
   }
 }
-
+.lricon-reussite .path1 {
+  &:before {
+    content: $lricon-reussite-path1;
+    color: rgb(229, 185, 0);
+  }
+}
+.lricon-reussite .path2 {
+  &:before {
+    content: $lricon-reussite-path2;
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+  }
+}
+.lricon-reussite .path3 {
+  &:before {
+    content: $lricon-reussite-path3;
+    margin-left: -1em;
+    color: rgb(229, 185, 0);
+  }
+}
 .lricon-twitter {
   &:before {
     content: $lricon-twitter;
@@ -141,6 +157,9 @@
 
 .layout-row-flex-start-center {
   @include flex-function(row, flex-start, center);
+}
+.layout-row-flex-start-start {
+  @include flex-function(row, flex-start, flex-start);
 
 }
 
@@ -182,8 +201,7 @@
   position:absolute;
   height: 70vh;
   width: 70vw;
-  left:15vw;
-  top:15vh;
+  @include absolute-center();
   video {
     width: 100%;
     height: auto;
@@ -195,7 +213,6 @@
   width: 100vw;
 }
 
-s
 
 .lr-shadow {
   -moz-box-shadow: 1px 1px 3px 2px #EEEEEE;

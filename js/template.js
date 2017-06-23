@@ -1,6 +1,6 @@
 (function () {
 
-    let templating = [
+    let templatingUs = [
         {
             type:'firstCTA',
             title:'Bienvenue dans la RUUCHE',
@@ -55,11 +55,19 @@
             title: 'Subscribe to our newsletter'
         }
     ];
+    let templatingSearch =[
+        {
+            type:'search'
+        },
+        {
+            type:'school'
+        }
+    ];
 
 
     let sectionHeight;
 
-    let loadTemplate = function() {
+    let loadTemplate = function(templating) {
         $.get('views/header.mst', function(template) {
             let rendered = Mustache.render(template);
             $('header').html(rendered);
@@ -75,5 +83,28 @@
             });
         }
     };
-    loadTemplate();
+    loadTemplate(templatingSearch);
+
+    let $window = $(window);
+    var stopheight;
+    var resizePage = function () {
+        stopheight=($window.height()/2)-25;
+        console.log(stopheight);
+    };
+    resizePage();
+    $window.resize(function () {
+        resizePage();
+    });
+    $window.scroll(function () {
+        var scrollFromTop = $window.scrollTop();
+        console.log(scrollFromTop);
+        if(scrollFromTop>=stopheight){
+            $('.extend-header').removeClass('no-scrolled');
+            $('.search-bar').addClass('open');
+        }else{
+            $('.extend-header').addClass('no-scrolled');
+            $('.search-bar').removeClass('open');
+        }
+    });
+
 })(jQuery);

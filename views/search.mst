@@ -3,7 +3,7 @@
         <div class="layout-row-flex-start-start">
             <div class="extend-header no-scrolled link-page layout-row-flex-start-center">
                  <span class="icon lricon-picto-logo"></span>
-                 <a href="#search" class="layout-row-space-between lr-link-button">Nous connaître</a>
+                 <a href="#" class="know layout-row-space-between lr-link-button">Nous connaître</a>
             </div>
             <div class="search-input">
                 <span class="icon lricon-search"></span>

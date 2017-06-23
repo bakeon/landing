@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'laRucheFont';
-  src:  url('#{$icomoon-font-path}/laRucheFont.eot?krrud1');
-  src:  url('#{$icomoon-font-path}/laRucheFont.eot?krrud1#iefix') format('embedded-opentype'),
-  url('#{$icomoon-font-path}/laRucheFont.ttf?krrud1') format('truetype'),
-  url('#{$icomoon-font-path}/laRucheFont.woff?krrud1') format('woff'),
-  url('#{$icomoon-font-path}/laRucheFont.svg?krrud1#laRucheFont') format('svg');
+  src:  url('#{$icomoon-font-path}/laRucheFont.eot?9924h3');
+  src:  url('#{$icomoon-font-path}/laRucheFont.eot?9924h3#iefix') format('embedded-opentype'),
+  url('#{$icomoon-font-path}/laRucheFont.ttf?9924h3') format('truetype'),
+  url('#{$icomoon-font-path}/laRucheFont.woff?9924h3') format('woff'),
+  url('#{$icomoon-font-path}/laRucheFont.svg?9924h3#laRucheFont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lricon-people {
+  &:before {
+    content: $lricon-people;
+  }
+}
+.lricon-bubble {
+  &:before {
+    content: $lricon-bubble;
+  }
+}
+.lricon-1 {
+  &:before {
+    content: $lricon-1;
+  }
+}
+.lricon-2 {
+  &:before {
+    content: $lricon-2;
+  }
+}
+.lricon-3 {
+  &:before {
+    content: $lricon-3;
+  }
+}
+.lricon-4 {
+  &:before {
+    content: $lricon-4;
+  }
+}
+.lricon-smiley {
+  &:before {
+    content: $lricon-smiley;
+  }
+}
 .lricon-picto-logo {
   &:before {
     content: $lricon-picto-logo;
@@ -137,6 +172,15 @@
 
 .layout-row-flex-start-center {
   @include flex-function(row, flex-start, center);
+}
+.layout-row-flex-end-center{
+  @include flex-function(row, flex-end, center);
+}
+.layout-row-flex-start-end{
+  @include flex-function(row, flex-start, flex-end);
+}
+.layout-row-flex-end-end{
+  @include flex-function(row, flex-end, flex-end);
 }
 
 .layout-row-center-center {

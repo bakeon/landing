@@ -47,8 +47,8 @@
 
     let facebookProvider = new firebase.auth.FacebookAuthProvider();
     facebookProvider.addScope('email');
-    function fbSignin(){
-        firebase.auth().signInWithPopup(facebookProvider).then(function(result) {
+    function fbSignin() {
+        firebase.auth().signInWithPopup(facebookProvider).then(function (result) {
 
 
             let token = result.credential.accessToken;
@@ -61,7 +61,7 @@
             $('.cta-content').html('<p>Bravo, vous êtes inscrits dans la Ruuche. A bientôt pour la sortie officielle du site.</p>');
             /*Add to firebase database*/
             writeUserNews(uid, email, displayName);
-        }).catch(function(error) {
+        }).catch(function (error) {
 
             let errorCode = error.code;
             let errorMessage = error.message;
@@ -193,11 +193,40 @@
     }, 5000);
 
     /*Add users in newsletter*/
-    function writeUserNews(uid,email,displayName){
+    function writeUserNews(uid, email, displayName) {
         firebase.database().ref('users/' + uid).set({
             email: email,
             displayName: displayName
         });
+    }
+    console.log('ok');
+    /*KPI Social Network*/
+    $('header').on('click', ".fb-button", function(e){
+        let uid = $(this).attr('id');
+        writeSocialClick(uid);
+    });
+
+    $('header').on('click', ".twitter-button", function(e){
+        let uid = $(this).attr('id');
+        writeSocialClick(uid);
+    });
+
+    function writeSocialClick(socialButton){
+        let uid = socialButton;
+        let count = firebase.database().ref("kpi/"+uid);
+        count.once('value').then(function (snap) {
+            let nCount = snap.val();
+            if(nCount != null){
+                firebase.database().ref('kpi/' + uid).set({
+                    click:nCount.click+1
+                });
+            }
+            else{
+                firebase.database().ref('kpi/' + uid).set({
+                    click:1
+                });
+            }
+        })
     }
 
 })(jQuery);

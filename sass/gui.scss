@@ -244,8 +244,10 @@
 .lightbox{
   position:absolute;
   height: 70vh;
-  width: 70vw;
+  width: 80vw;
   @include absolute-center();
+  background: $black;
+  overflow: scroll;
   video {
     width: 100%;
     height: auto;

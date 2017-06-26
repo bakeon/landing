@@ -498,42 +498,42 @@ input[type=submit] {
 }
 
 .fourthArticle {
-  padding:300px 20px 40px 20px;
+  padding: 300px 20px 40px 20px;
 
-  .title-container{
-    height:380px;
-    width:380px;
+  .title-container {
+    height: 380px;
+    width: 380px;
     position: absolute;
-    top:-330px;
-    left:50%;
-    transform:translateX(-50%);
-    .triangle-1{
+    top: -330px;
+    left: 50%;
+    transform: translateX(-50%);
+    .triangle-1 {
       position: absolute;
       height: 280px;
-      width:280px;
+      width: 280px;
       font-size: 0;
-      background: url("../assets/img/alveoleombre.svg")no-repeat right bottom;
-      z-index:1;
-      bottom:60px;
-      right:0;
+      background: url("../assets/img/alveoleombre.svg") no-repeat right bottom;
+      z-index: 1;
+      bottom: 60px;
+      right: 0;
     }
-    h1{
-      color:$blue;
+    h1 {
+      color: $blue;
       font-size: 40px;
-      transform:translate(-50px,-70px);
-      z-index:2;
+      transform: translate(-50px, -70px);
+      z-index: 2;
     }
-    .big-four{
+    .big-four {
       height: 400px;
-      width:400px;
-      background: url("../assets/img/gros4.svg")no-repeat right top;
+      width: 400px;
+      background: url("../assets/img/gros4.svg") no-repeat right top;
       background-size: 100%;
-      z-index:2;
+      z-index: 2;
 
     }
   }
 
-  .article-container{
+  .article-container {
 
   }
   .article-container {
@@ -541,9 +541,9 @@ input[type=submit] {
     height: 270px;
     article {
       width: 40vw;
-      .number-etape{
+      .number-etape {
         font-size: 100px;
-        color:$grey;
+        color: $grey;
       }
       p {
         display: flex;
@@ -551,39 +551,39 @@ input[type=submit] {
         justify-content: flex-start;
         background: rgba(255, 255, 255, 0.8);
         padding: 20px;
-        border-radius:3px;
+        border-radius: 3px;
 
         color: $blue;
         font-size: 20px;
         line-height: 35px;
-        .icon{
+        .icon {
           color: $yellow;
-          font-size:35px;
+          font-size: 35px;
         }
       }
     }
     .order-1 {
       transform: translateX(20vw);
-      &>div {
+      & > div {
         order: 0;
-        &>div{
+        & > div {
           position: absolute;
           height: 280px;
-          width:280px;
+          width: 280px;
           font-size: 0;
-          background: url("../assets/img/alveoleombre2.svg")no-repeat center center;
-          left:-100px;
-          bottom:-30px;
-          z-index:1;
-          .icon{
+          background: url("../assets/img/alveoleombre2.svg") no-repeat center center;
+          left: -100px;
+          bottom: -30px;
+          z-index: 1;
+          .icon {
             position: absolute;
-            top:-20px;
-            left:0;
+            top: -20px;
+            left: 0;
           }
         }
       }
       p {
-        z-index:2;
+        z-index: 2;
         order: 1;
         .icon {
           margin-right: 20px;
@@ -596,21 +596,21 @@ input[type=submit] {
     }
     .order-2 {
       transform: translateX(-20vw);
-      &>div {
+      & > div {
         order: 1;
-        &>div{
+        & > div {
           position: absolute;
           height: 280px;
-          width:280px;
+          width: 280px;
           font-size: 0;
-          background: url("../assets/img/alveoleombre.svg")no-repeat center center;
-          right:-100px;
-          bottom:-30px;
-          z-index:1;
-          .icon{
+          background: url("../assets/img/alveoleombre.svg") no-repeat center center;
+          right: -100px;
+          bottom: -30px;
+          z-index: 1;
+          .icon {
             position: absolute;
-            top:-20px;
-            right:0;
+            top: -20px;
+            right: 0;
           }
         }
       }
@@ -648,6 +648,93 @@ main {
   color: $white;
 }
 
+.subscribe {
+  height: 50vw;
+  .section-container {
+    height: 100%;
+    width: 100%;
+  }
+  .icon {
+    font-size: 200px;
+    color: $black;
+  }
+  .lr-CTA {
+    @include flex-function(row, space-between, center);
+    color: $black;
+  }
+  #fb-connect {
+    margin-right: 20px;
+  }
+}
+
+.video {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  .section-container {
+    height: 100%;
+    width: 100%;
+  }
+  .player-action {
+    display: block;
+    @include absolute-center();
+    width: 100%;
+    height: 100%;
+    background: url("../assets/img/player.svg") no-repeat center center;
+  }
+
+}
+
+.mentionWrapper {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  background: $bg-grey;
+  padding: 20px;
+  h1,h2,h3,h4,h5{
+    margin: 25px 0;
+  }
+  p{
+    margin-bottom: 8px;
+  }
+  a{
+    color: $blue;
+  }
+}
+
+.hive {
+  display: block;
+  content: '';
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  font-size: 0;
+  overflow: hidden;
+  background-size: contain;
+}
+
+.hive1 {
+  top: 0;
+  left: -15vw;
+  background: url("../assets/img/bg_video-01.svg") no-repeat center center;
+}
+
+.hive2 {
+  bottom: -10vh;
+  right: -15vw;
+  background: url("../assets/img/bg_video-02.svg") no-repeat center center;
+}
+
+#footer {
+  height: 70px;
+  background: $black;
+  .lr-link-button {
+    color: $white;
+  }
+}
+
 /*.section{
   display: block;
   height:calc(100% - 100px);
@@ -664,14 +751,7 @@ main {
     }
   }
 }
-.subscribe{
-  .lr-CTA{
-    @include flex-function(row,space-between,center)
-  }
-  #fb-connect{
-    margin-right: 20px;
-  }
-}
+
 .sixArticle{
   background: url("../assets/img/sigle_logo_gris.svg")no-repeat center center;
   background-size: contain;
@@ -722,39 +802,7 @@ main {
   }
 }
 
-.video{
-  position: relative;
-  background-size: cover;
-  .player-action{
-    width:100%;
-    height:100%;
-    background: url("../assets/img/player.svg")no-repeat center center;
-  }
-  &.section .section-container>div{
-    height:80%;
-  }
-}
 
-.hive{
-  display: block;
-  content: '';
-  height:100vh;
-  width:50vw;
-  position: absolute;
-  font-size: 0;
-  overflow: hidden;
-  background-size:contain ;
-}
-.hive1{
-  top:0;
-  left:-15vw;
-  background: url("../assets/img/bg_video-01.svg")no-repeat center center;
-}
-.hive2{
-  bottom:-10vh;
-  right:-15vw;
-  background: url("../assets/img/bg_video-02.svg")no-repeat center center;
-}
 
 */
 /*

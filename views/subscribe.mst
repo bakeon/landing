@@ -1,10 +1,8 @@
-<div class="content section-container">
-    <div>
+<div class="content section-container layout-column-space-around-center">
     <h1>Restons en contact</h1>
     <p>Connecte toi à la ruuche !</p>
-        <div class="cta-content layout-row">
-            <a href="#" id="fb-connect" class="social-CTA"><img src="assets/img/facebook-connect-bee.png"></a>
-            <a href="#" id="google-connect" class="social-CTA"><img src="assets/img/google-connect-bee.png"></a>
-        </div>
+    <div class="cta-content layout-row">
+        <a href="#" id="fb-connect" class="social-CTA"><span class="icon lricon-facebook"></span></a>
+        <a href="#" id="google-connect" class="social-CTA"><span class="icon lricon-twitter"></span></a>
     </div>
 </div>

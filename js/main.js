@@ -199,7 +199,6 @@
             displayName: displayName
         });
     }
-    console.log('ok');
     /*KPI Social Network*/
     $('header').on('click', ".fb-button", function(e){
         let uid = $(this).attr('id');

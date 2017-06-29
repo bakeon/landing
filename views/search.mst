@@ -7,7 +7,7 @@
             </div>
             <div class="search-input">
                 <span class="icon lricon-search"></span>
-                <input id="search" class="flex-1" type="search" placeholder="Ex : Developer"/>
+                <input id="search" class="flex-1" type="text" placeholder="Ex : Developer"/>
             </div>
             <ul class="extend-header layout-row-space-between no-scrolled social layout-row-flex-start-center">
                 <li><a href="https://www.facebook.com/laruuche/" target="_blank"><span class="icon lricon-facebook"></span></a></li>

@@ -127,7 +127,9 @@
     body.on('click', '#search', function () {
         checkTokenDatabase();
     });
-    body.on('click', '#recherche', function () {
+    body.on('submit', '.search-bar', function (e) {
+        $('#main').html('');
+        e.preventDefault();
         var a = $('#search').val();
         let token = database.ref("token");
         token.once('value').then(function (snapshot) {
@@ -139,11 +141,7 @@
                     Accept: 'application/json',
                     Authorization: tokenNumber
                 },
-                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/57daa4c40a4e7/search',
-                data: {
-                    q: a,
-                    size: 10,
-                },
+                url: 'https://api.opendata.onisep.fr/api/1.0/dataset/57daa4c40a4e7/search?q='+a+'&size=10',
                 dataType: 'json',
                 success: function (json) {
                     console.log(json);
@@ -159,6 +157,11 @@
                                 dataType: 'json',
                                 success: function (json) {
                                     html += '<div>formation' + i + '</div>';
+                                    $.get('views/school.mst', function (template) {
+                                        let view = json.results[i];
+                                        let rendered = Mustache.render(template, view);
+                                        $('#main').append(rendered);
+                                    });
                                 }
                             });
                         }
@@ -166,7 +169,6 @@
                     else {
                         $('#results').html('<h1>no results</h1>');
                     }
-
                 }
             });
         })

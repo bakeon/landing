@@ -2,7 +2,7 @@
     <nav class="layout-row-space-between">
         <div class="layout-row-space-between">
             <span class="icon lricon-picto-logo"></span>
-            <a href="#" class="know layout-row-space-between lr-link-button">Nous connaître</a>
+            <a href="#" class="know layout-row-space-between lr-link-button" title="page nous connaître">Nous connaître</a>
         </div>
 
         <ul class="layout-row-space-between">

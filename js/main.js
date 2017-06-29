@@ -113,16 +113,7 @@
 
     let body = $('body');
 
-    body.on('click', '.playVideoInLightbox, #closeLightboxVideo, .lightbox-shadow', function () {
-        body.toggleClass('lightbox-open');
-        var currentVideo = $('.lightbox-container video')[0];
-        console.log(currentVideo);
-        if (currentVideo.paused) {
-            currentVideo.play();
-        } else {
-            currentVideo.pause();
-        }
-    });
+
 
     body.on('click', '.get-more', function () {
         console.log('get more');

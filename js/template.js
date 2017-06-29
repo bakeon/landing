@@ -34,6 +34,13 @@
                     class:'layout-row-flex-end-end order-2'
                 }
             }
+        },
+        {
+            type:"video",
+            lightbox:'<iframe width="854" height="480" src="https://www.youtube.com/embed/eK1iQ6be4Zg" frameborder="0" allowfullscreen></iframe>'
+        },
+        {
+            type:"subscribe"
         }
     ];
     let templatingSearch =[
@@ -44,6 +51,20 @@
             type:'school'
         }
     ];
+    var body = $('body');
+    body.on('click', '.playVideoInLightbox, #closeLightboxVideo, .lightbox-shadow', function () {
+        body.toggleClass('lightbox-open');
+        $('.lightbox').html('');
+        /*var currentVideo = $('.lightbox-container video')[0];
+         console.log(currentVideo);
+         if (currentVideo.paused) {
+         currentVideo.play();
+         } else {
+         currentVideo.pause();
+         }*/
+        $('.lightbox').html(templateKnow[1].lightbox);
+    });
+
 
 
     let sectionHeight;
@@ -72,9 +93,22 @@
                 $('#' + templating[i].type + i + '').html(rendered);
             });
         }
+        $.get('views/footer.mst', function (template) {
+            let rendered = Mustache.render(template);
+            $('footer').html(rendered);
+        });
     };
     var body=$('body');
     loadTemplate(templatingSearch);
+
+    body.on('click','.condition',function () {
+        body.toggleClass('lightbox-open');
+        $('.lightbox').html('');
+        $.get('views/mentions.mst', function (template) {
+            let rendered = Mustache.render(template);
+            $('.lightbox').html(rendered);
+        });
+    });
 
     body.on('click','.know',function () {
        loadTemplate(templateKnow,'know');

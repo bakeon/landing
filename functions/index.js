@@ -6,6 +6,8 @@ const admin = require('firebase-admin');
 
 const nodemailer = require('nodemailer');
 const mcapi = require('mailchimp-api');
+var mysql = require('mysql');
+
 
 admin.initializeApp(functions.config().firebase);
 
@@ -15,34 +17,30 @@ const gmailPassword = encodeURIComponent(functions.config().gmail.password);
 const mailTransport = nodemailer.createTransport(
     `smtps://${gmailEmail}:${gmailPassword}@smtp.gmail.com`);
 
-const APP_NAME = 'La ruuche';
+const APP_NAME = 'La Ruuche';
 
-var db = require('node-mysql');
-var DB = db.DB;
-var BaseRow = db.Row;
-var BaseTable = db.Table;
-
-var box = new DB({
-    host     : '213.215.23.148:62109',
-    user     : 'root',
-    password : 'root',
-    database : ''
+const con = mysql.createConnection({
+    host: "35.187.66.1",
+    port:"3306",
+    user: "root",
+    password: "root"
 });
 
-var basicTest = function(cb) {
-    box.connect(function(conn, cb) {
-        cps.seq([
-            function(_, cb) {
-                var a=conn.query('select * from code_NSF limit 1', cb);
-                console.log(a);
-            },
-            function(res, cb) {
-                console.log(res);
-                cb();
-            }
-        ], cb);
-    }, cb);
-};
+
+exports.basicTest = functions.database.ref('kpi/search').onWrite( event => {
+    let db = admin.database();
+    let kpiSearch = db.ref('kpi/search');
+    kpiSearch.on('child_added', function(snapshot){
+            console.log(snapshot.val().input);
+            con.connect(function(err) {
+                console.log("Connected!");
+            });
+
+
+
+    });
+});
+
 
 // [START sendWelcomeEmail]
 /**

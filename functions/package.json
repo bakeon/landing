@@ -7,6 +7,8 @@
     "firebase-functions": "^0.5.7",
     "mailchimp-api": "^2.0.7",
     "mailchimp-api-v3": "^1.7.0",
+    "mysql": "^2.13.0",
+    "node-mysql": "^0.4.2",
     "nodemailer": "^4.0.1",
     "request": "^2.81.0",
     "superagent": "^3.5.2"

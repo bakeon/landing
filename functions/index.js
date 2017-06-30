@@ -17,6 +17,33 @@ const mailTransport = nodemailer.createTransport(
 
 const APP_NAME = 'La ruuche';
 
+var db = require('node-mysql');
+var DB = db.DB;
+var BaseRow = db.Row;
+var BaseTable = db.Table;
+
+var box = new DB({
+    host     : '213.215.23.148:62109',
+    user     : 'root',
+    password : 'root',
+    database : ''
+});
+
+var basicTest = function(cb) {
+    box.connect(function(conn, cb) {
+        cps.seq([
+            function(_, cb) {
+                var a=conn.query('select * from code_NSF limit 1', cb);
+                console.log(a);
+            },
+            function(res, cb) {
+                console.log(res);
+                cb();
+            }
+        ], cb);
+    }, cb);
+};
+
 // [START sendWelcomeEmail]
 /**
  * Sends a welcome email to new user.

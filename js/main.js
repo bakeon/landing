@@ -130,7 +130,7 @@
     body.on('submit', '.search-bar', function (e) {
         $('#main').html('');
         e.preventDefault();
-        var a = $('#search').val();
+        /*var a = $('#search').val();
         let token = database.ref("token");
         token.once('value').then(function (snapshot) {
             let tokenNumber = snapshot.val();
@@ -171,7 +171,7 @@
                     }
                 }
             });
-        })
+        })*/
     });
 
     /*Number of users*/
@@ -224,8 +224,8 @@
     /*KPI ON SEARCH*/
     let countSearch = '';
     $('.content').on('keyup', '#search', function(e){
+        e.preventDefault();
         let uid = guid();
-        clearTimeout(countSearch);
         let input = $('#search').val();
         countSearch = setTimeout(function () {
             writeKpiSearch(input, uid);

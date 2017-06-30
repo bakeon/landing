@@ -33,14 +33,16 @@ exports.basicTest = functions.database.ref('kpi/search').onWrite( event => {
     kpiSearch.on('child_added', function(snapshot){
             let job=snapshot.val().input;
             con.connect(function(err) {
-                con.query('SELECT rome_code FROM laruuche.jobs where name_job = '+job+'; ', function (error, results, fields) {
-                    if (error) throw error;
-                    console.log('results : '+results);
-                });
-                console.log("job research");
+                console.log("connected database");
                 if(err){
 
                 }
+            });
+            con.query('SELECT rome_code FROM jobs where name_job = '+job+'; ', function (error, results, fields) {
+                console.log("job search");
+
+                if (error) {throw error};
+                console.log('results : '+results);
             });
 
 

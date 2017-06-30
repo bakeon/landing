@@ -221,4 +221,34 @@
         })
     }
 
+    /*KPI ON SEARCH*/
+    let countSearch = '';
+    $('.content').on('keyup', '#search', function(e){
+        let uid = guid();
+        clearTimeout(countSearch);
+        let input = $('#search').val();
+        countSearch = setTimeout(function () {
+            writeKpiSearch(input, uid);
+        }, 1500);
+
+
+    });
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
+
+    function writeKpiSearch(input, uid) {
+        firebase.database().ref('kpi/search/'+ uid).set({
+            input: input
+        });
+    }
+
+
 })(jQuery);
